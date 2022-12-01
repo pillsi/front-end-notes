@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h3>While的概念解释：</h3>
+    <p>用while去判断一个条件是否成立，成立后开启循环</p>
+    <li>三要素一: 变量初始值（走进校门第一天）</li>
+    <li>三要素二：变量条件和触发事件（完成X天学习后，毕业）</li>
+    <li>三要素三：终止条件（每天都要自增学习内容，直到完成X天学习后）</li>
+    <br>
+
+    <script>
+        // 模板
+        // 1. 设定初始变量
+        let i = 1;
+        // 2. 循环什么条件？触发什么内容？
+        while (i<=3){
+            document.write('我要循环5次<br>')
+        // 3. 终止条件是？
+        i++
+        }
+        
+        // 📒练习1：我一定要找到好工作，循环10遍
+        let girl = 1;
+        while (girl<=5){
+            document.write('我一定要找到好工作❤️<br>')
+            girl++
+        }
+
+        // 📒练习2：用户输入几次，就循环打印几次
+        // let user = 1;
+        // let end = prompt('要循环几次？')
+        // while(user<=end){
+        //     document.write('打印好了别复制粘贴了<br>')
+        //     user++
+        // }
+
+        // 📒练习3：打印出从1~100的每个数
+        var num = 1;
+        while(num <= 10){
+            document.write(`${num}<br>`)
+            num++
+        }
+
+        // 📒练习4：打印1~100的总和
+        var num = 1;
+        var sum = 0; //
+        while(num<=100){
+            sum = sum + num; //每次都重新赋值后再运算， 简化代码sum += num
+            num++
+        }
+        document.write(sum)//因为要导出的是最后的结果，所以要在函数外面执行
+        
+        // 📒练习5：求1~100所有偶数的和
+        var num = 1;
+        var sum = 0;
+        while(num<=100){
+            // 筛选偶数
+            if(num%2===0){
+                sum = sum + num;
+            }
+            num++; //要写在外面，因为自加时给每次循环
+        }
+        document.write(sum);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<h3>退出循环的概念：</h3>
+<p style="color: steelblue;">本来我要刮100张彩票，但是刮到第3张的时候，发现就中奖了，所以后面的不用刮</p>
+
+<body>
+    <script>
+        // 到第3个循环停止
+        i = 1;
+        while(i<=10){
+            if(i == 3){
+                break //退出整个循环
+            }
+            i++;
+            document.write(i)
+        }
+
+        // 📒练习：在弹框里问你爱我吗？如果不输入爱，则一直弹
+        // 起始值恒定为true
+        while(true){
+            str = prompt('你爱我吗？')
+            if(str === '爱'){
+                break;
+            }
+        }
+
+    </script>
+</body>

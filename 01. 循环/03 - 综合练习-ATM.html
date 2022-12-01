@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        1. 存钱 2.取钱 3.查余额 4.退出
+        */
+
+        /* 
+        思路：
+        1. 对话框如果不填写1-4的某个数字，会一直循环
+        2. 设账户初始余额值
+        3. 1~3的条件
+        4. 4的结束循环
+        */
+        var balance = 0;
+        while(true){
+            var bank = +prompt(`请您选择操作：
+            1. 存钱
+            2. 取钱
+            3. 查看余额
+            4. 退出`)
+            if(bank === 4){
+                break;
+            }
+            switch(bank){
+            case 1: 
+                var deposit = +prompt(`请存入金额`);
+                balance = deposit;
+                break;
+            case 2:
+                var withdrawl = +prompt(`取款金额为：`)
+                balance = balance - withdrawl;
+                break
+            case 3:
+                alert(`您的余额为${balance}`)
+                break;
+            };
+        };
+       
+    </script>
+</body>
+</html>

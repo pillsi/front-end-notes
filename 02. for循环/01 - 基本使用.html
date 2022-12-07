@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ⭐️基本语法：把while的三个条件汇成一条代码
+        // for (变量起始值; 终止条件； 变量变化量;)
+        for(let i=1;i<=3;i++){
+            document.write("月薪过万<br>")
+        }
+
+        // 📕题目1：for循环输出1~100
+        // for(i=1;i<=100;i++){
+        //     document.write(i)
+        // }
+
+        // 📕题目2：求1~100之间所有的偶数和
+        let sum = 0;
+        for(let i=1;i<=100;i++){
+            if(i%2===0){
+                sum = sum + i
+            }
+        }
+        document.write(sum)
+
+        // 📕题目3：打印5个小星星
+        for(let i=1; i<=5; i++){
+            document.write("💛")
+        }
+
+        // 📕题目4：打印数组
+        // 🔎注意：打印数组要从0开始，因为是下角标的第一个
+        let arr = ["八方来财", "早日退休", "看破红尘", "心如止水"]
+        // 🔎注意：这里把数字的长度写活：arr.length是5条值，但是下标是0开始，所以要小于，不能=length的长度
+        for(let i = 0; i<arr.length; i++){
+            document.write(arr[i])
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./02 - 嵌套循环示意图.jpg" alt="" style="height: 300px;">
+    <br>
+    <script>
+        // 每天背5个单词（内部for循环，循环执行完毕后再执行外部），连续背3天（外部for循环）
+        // 适用于既要循环A事件，又要B事件...
+        
+        // 📒例子：先定外层，要背3天的单词
+        for(let i = 1; i<=3; i++){
+            // 定里层，每天背5个单词
+            document.write(`这是背单词的第${i}天<br>`)
+            for(let j = 1; j<=5; j++){
+                document.write(`今天已经背了${j}个单词<br>`)
+            }
+        }
+
+        // 📕题目1：打印5行5列的小星星
+        // 外循环：5行
+        for(let i = 1; i<=5; i++){
+            // 内循环：5列
+            for(let j=1; j<=5; j++){
+                document.write("💚")
+            }
+            // 换行
+            document.write('<br>')
+        }
+
+        // 📕题目2：有几行，就打印几个方块
+        // 外部：控制行，逐步加
+        for(let i = 1; i <=5; i++){
+            for(let j = 1; j<=i; j++){
+                document.write("♦️")
+            }
+            document.write('<br>')
+        }
+        // 内部：控制列，跟着行数走
+
+
+    </script>
+</body>
+</html>

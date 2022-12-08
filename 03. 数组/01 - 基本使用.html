@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .sum{
+        color: red;
+    }
+</style>
+<body>
+    <script>
+        // 📝基本概念和术语：
+        // 目的：可以把多个数据存到单个变量里面
+        let names = ["Tom", "Zack", "Steve", "Jessie"]
+        // 中括号里面的名字叫元素elements
+        console.log(names[0]) //Tom
+        // 下角标index从0开始，跟长度有区别
+        console.log(names.length)//4
+        // 长度length为elements的个数，从1开始
+
+
+        /* 📕题目1：求2,6,1,7,4的总和及平均值 
+            🧠思路：1.声明求和的变量sum
+            2. 遍历数组，把每个数组元素加到sum里面去
+            3. 用sum➗数组长度得平均值
+        */
+
+        let sum = 0;
+        let avg = 0;
+        let arr = [2,6,1,7,4];
+        for(i=0; i<arr.length; i++){
+            sum = sum + arr[i];
+            avg = sum / arr.length
+            // avg = sum / length.arr
+        }
+        document.write(`<div class="sum">${sum}</div>`)
+        document.write(avg)
+        
+        
+
+
+    </script>
+</body>
+</html>

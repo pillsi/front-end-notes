@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./增删改查.png" alt="">
+    <script>
+        // ⭐️改：
+        // 🧠思路：通过下标来定位，或者遍历后统一加内容修改
+        // 📕例题： 把下列数组前面都加上“小仙女的"
+        arr = ["phone", "watch", "tv"]
+        for(let i = 0; i < arr.length; i++){
+            arr[i] = "小仙女的" + arr[i]
+        }
+        document.write(arr)
+
+
+        // ⭐️增：push，unshift。数组末尾/开头增加单或多个新元素
+        // 🧠思路：只能从头/尾加，长度会被改变
+        // 📕例题：在下列数组前面增加pencil, 后面增加pad, card
+        arr = ["phone", "watch", "tv"]
+        arr.unshift("pencil")
+        arr.push("pad", "card")
+        document.write(`<div>${arr}<div>`)
+
+        // ⭐️查：筛选出符合条件的元素
+        // 🧠思路：因为是筛选，所以不能影响原数组，必须建立新的空数组后给赋值
+        // 📕例题：选出大于10的元素，放入新数组[2,3,7,12,56,44,102]
+        // let arr = [2,3,7,12,56,44,102]
+        // let newArr = []
+        // for(let i = 0; i< arr.length; i++){
+        //     if(arr[i]>=10){
+        //         newArr.push(arr[i])
+        //     }
+        // }
+        // document.write(newArr)
+
+        let names = [2,3,7,12,56,44,102]
+        let newNames = []
+        for(let j = 0; j<names.length; j++){
+            names[j] < 55 ? newNames.push(names[j]) : names[j]
+        }
+        document.write(newNames)
+
+        // ⭐️删：pop, unshift, splice
+        // pop：删末尾最后一个元素，语法arr.pop()，不带参数
+        // shift：删除开头第一个元素，语法arr.shift()，不带参数
+        let color = ["red", "green", "blue"]
+        color.shift()
+        color.pop()
+        document.write(color)
+        // splice：删除指定元素
+        // 语法：splice(从第几个下标开始删，删几个元素)
+        let car = ["benz", "bmw", "audi", "honda"]
+        car.splice(3,1)
+        document.write(car)
+
+
+    </script>
+</body>
+</html>

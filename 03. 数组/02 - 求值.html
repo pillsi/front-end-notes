@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 📝数据里求出最大值
+        // 🧠思路：求最大值的过程，是让初始变量去和每个值比较的过程，类似比武招亲，一个一个上，最强的留下
+
+        // 📕例题：求[2,6,1,77,52,25,7]的最大值
+
+        let arr = [2,6,1,100,25,7]
+        // 设max为数组里的角标0
+        let max = 0;
+        // 遍历所有元素
+        for (let i = 1; i<arr.length; i++){
+        // 一旦出现元素比max大，就赋值给max
+        // if(arr[i]>max){
+        //     max = arr[i]
+        // }
+        
+        // 三元表达式
+        max < arr[i] ? max = arr[i] : max
+        
+        }
+        document.write(max)
+
+        let array = [2,6,100,25,7];
+        let min = array[0];
+        for (let j = 1; j<array.length; j++){
+            min > array[j] ? min = array[j] : min
+        }
+        document.write(`<div>${min}</div>`)
+    </script>
+</body>
+</html>

@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        box-sizing: border-box;
+    }
+    span{
+        display: inline-block;
+        border: 1px solid steelblue;
+        background-color: rgba(122, 182, 199,.3);
+        width: 100px;
+        text-align: center;
+        padding: 2px 4px;
+        margin: 2px 4px;
+    }
+</style>
 <body>
     <img src="./02 - 嵌套循环示意图.jpg" alt="" style="height: 300px;">
     <br>
@@ -41,8 +55,20 @@
             }
             document.write('<br>')
         }
+
+        document.write(`<br>`)
         // 内部：控制列，跟着行数走
 
+        // 📕题目3：九九乘法表
+        // 外层：列9层
+        for(let i=1; i<=9; i++){
+        // 内层：行9层
+        for(let j=1; j<=i; j++){
+            let k = i * j;
+            document.write(`<span>${j} x ${i} = ${k}</span>`)
+        }
+        document.write(`<br>`)
+        }
 
     </script>
 </body>

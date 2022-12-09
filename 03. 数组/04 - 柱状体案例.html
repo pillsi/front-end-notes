@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        border-left: 1px solid slateblue;
+        border-bottom: 1px solid slateblue;
+        width: 500px;
+        margin: 50px auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+    }
+
+    .box>div{
+        background-color: slateblue;
+        text-align: center;
+        color: slateblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    span{
+        margin-top: -30px;
+    }
+
+    p{
+        margin-bottom: -40px;
+    }
+</style>
+<body>
+       
+    <script>
+        
+        // 建立空数组，把输入的数据存进去
+        let income = [];
+        // 循环用户的输入：
+        for(let i = 1; i<=4; i++){
+            income.push(prompt(`请输入${i}月份的收入`))
+        }
+        // 把内容渲染出来：
+        // div大盒子起始
+        document.write(`<div class="box">`)
+        // div大盒子中间的内容：
+            // 遍历所有内容一样的小盒子
+            for (let i=0; i<income.length; i++){
+                // 渲染内容，修改成动态数据：
+                // 收入=用户输入后，暂存的空数组income[];
+                // 柱状高度=收入+px
+                // 横坐标的月份=i+1，因为在这里的i声明为了0
+                document.write(`
+                <div style="height:${income[i]}px;">
+                    <span>${income[i]}</span>
+                    <p>${i+1}月</p>
+                </div>
+        `)
+            }
+        // div大盒子结尾
+        document.write(`</div>`)
+    </script>
+</body>
+</html>

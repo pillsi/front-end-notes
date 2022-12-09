@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span{
+        display: inline-block;
+        border: 1px solid steelblue;
+        background-color: rgba(122, 182, 199,.3);
+        width: 100px;
+        text-align: center;
+        padding: 2px 4px;
+        margin: 2px 4px;
+    }
+
+    div{
+        margin: 20px 0;
+    }
+</style>
+<body>
+    <p>函数的魅力是让我们能封装一套代码，不用复制粘贴，直接重复调用</p>
+    <p>应用场景：在播放器里面，有几个需要播放的地方，只要封装成函数，重复调用即可</p>
+    <img src="./01 - 基本概念.jpg" alt="" style="height: 300px;">
+    <br>
+    <script>
+        // 📝基本语法：函数声明+函数调用
+        // 声明：尽量用动词，get/can/is/set/load...
+        function getJob(){ //函数体+函数名()
+            document.write(`<div>I will get a good job...</div>`)
+        }
+        // 调用:如果不调用，函数不执行
+        getJob(); //函数名（）
+
+        // ⭐️例子：打印多份99乘法表
+        document.write(`<div>⭐️例题：打印多份99乘法表</div>`)
+        function sheet(){
+        for(let i=1; i<=9; i++){
+        // 内层：行9层
+        for(let j=1; j<=i; j++){
+            let k = i * j;
+            document.write(`<span>${j} x ${i} = ${k}</span>`)
+        }
+        }
+        document.write(`<div></div>`)
+        };
+        
+        sheet();
+        sheet();
+    </script>
+</body>
+</html>

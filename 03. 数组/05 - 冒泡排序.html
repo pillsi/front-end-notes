@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ⭐️原理解释，理解即可。有排序的API sort可以搭配函数用
+
+        let arr = [2,5,1,4,3]
+        // 外层循环：从2开始，每个数走4趟才能完成交换
+        for(i=0;i<arr.length-1;i++){
+            // 内层循环：从2开始，每个数后跟一个数对比，要走的次数
+            for(j=0;j<arr.length-i-1;j++){
+                // j在这里是1，j+1就是5，两两比较，大的往后挪
+                if(arr[j]>arr[j+1]){
+                    // 交换
+                    let temp = arr[j]
+                    arr[j] = arr[j+1]
+                    arr[j+1] = temp
+                }
+            }
+        }
+        document.write(arr)
+
+        let num = [2,5,1,4,3];
+        num.sort(function(a,b){
+            // 正序是a - b,逆序是b - a
+            return (a - b)
+        })
+        document.write(num)
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 📕题目一：查找出几个用户年龄的参数：看渲染
+        // let ages = [];
+        // let sum = 0;
+        // let avg = 0;
+        // let adults = [];
+        // for(let i =1; i <= 5; i++){
+        //     ages.push(+prompt(`请输入第${i}位用户的年龄`))
+        // }
+        // for(let j = 0; j < ages.length; j++){
+        //     sum = sum + ages[j];
+        //     avg = sum / ages.length
+        //     if(ages[j]>=18){
+        //         adults.push(ages[j])
+        //     }
+        // }
+        // // 如果用判断，变量必须写在此循环前，先设定最大和最小都是数组里的第一个元素，然后再一一比较
+        // let max = ages[0];
+        // let min = ages[0];
+        //     for(let k = 0; k<ages.length; k++){
+        //     max < ages[k] ? max = ages[k] : ages[k]
+        //     ages[k] < min ? min = ages[k] : ages[k]
+        //     }
+        
+        // // 用sort排序法，最大最小利用角标和length来取值
+        // ages.sort(function(a, b){
+        //     return (a - b)
+        // })
+        // let maximum = ages[ages.length-1]
+        // let minimum = ages[0]
+        
+
+        // document.write(`<div class="box">`)
+        // document.write(`
+        // <p>用户的年龄为：${ages}</p>
+        // <p>用户的所有年龄为：${sum}</p>
+        // <p>用户的平均年龄为：${avg}</p>
+        // <p>成年用户的数量为：${adults.length}</p>
+        // <p>用户的最大年龄为：${maximum}</p>
+        // <p>用户的最小年龄为：${minimum}</p>
+        // `)
+            
+        // document.write(`</div>`)
+
+
+        // 📕题目2：找出元素为10的下标，有则打印该下标，没有则打印-1
+        let arr = [88,20,20,100,50,10]
+        // 默认声明没有10
+        let re = -1;
+        for(i=0; i<arr.length; i++){
+            // re=i,i元素的下标，不是值，所以不能等于arr[i]
+            arr[i] === 10 ? re = i : ""
+        }
+        document.write(`<div>数组[88,20,20,100,50,10]元素为10的位置在第${re}位</div>`)
+
+        // 📕题目3：求数组元素的和[5, 8, 9, 2, 1, 5]
+        let array = [5, 8, 9, 2, 1, 5];
+        let summary = 0;
+        for(i=0; i<array.length; i++){
+            summary = summary + array[i];
+        }
+        document.write(`<div>数组[5, 8, 9, 2, 1, 5]的元素和为${summary}</div>`)
+
+        // 📕题目4：求出数组里大于5的和 [4, 9, 5, 20, 3, 11]
+        let timu = [4, 9, 5, 20, 3, 11]
+        let qiuhe = 0;
+        for(i=0;i<timu.length;i++){
+            if(timu[i]>5){
+               qiuhe = qiuhe + timu[i] 
+            }
+        }
+        document.write(`<div>数组元素[4, 9, 5, 20, 3, 11]>5的和为${qiuhe}</div>`)
+
+        // 📕题目5：求出班级里同学们平均年龄[15, 19, 21, 33, 18, 24]
+            let score = [15, 19, 21, 33, 18, 24];
+            let total = 0;
+            let average = 0;
+            for (i=0; i<score.length; i++){
+                total = total + score[i];
+                average = parseInt(total / score.length);
+            }
+            document.write(`<div>班级里同学们的年龄[15, 19, 21, 33, 18, 24]的平均数为${average}岁</div>`)
+
+        // 📕题目6：计算[2, 6, 18, 15, 40] 中能被3整除的偶数的和
+        let oushu = [2, 6, 18, 15, 40, 36, 44, 24];
+        let odd = [];
+        let totalSum = 0;
+        for(i=0; i<oushu.length; i++){
+            if(oushu[i] % 3 === 0 && oushu[i] % 2 === 0){
+                odd.push(oushu[i]);
+            }
+        }
+        for(j = 0; j<odd.length; j++){
+            totalSum = totalSum + odd[j]
+            }
+        
+        document.write(`<div>在数组[${oushu}]中，能被3整除的偶数的和元素和为${totalSum}</div>`)
+
+        // 📕题目7： 计算[2, 6, 18, 15, 40] 中能被3整除的偶数的个数
+        // let jisuan = [2, 6, 18, 15, 40];
+        // let zhengchu = []
+        // let oushu = []
+        // for(i=0; i<jisuan.length; i++){
+        //     if(jisuan[i] % 3 === 0){
+        //         zhengchu.push(jisuan[i]);
+        //     }
+        // }
+
+        // for(j=0; j<zhengchu.length; j++){
+        //             if(zhengchu[j] % 2 === 0){
+        //                 oushu.push(zhengchu[j])
+        //             }
+        //         }
+
+        // document.write(`<div>[2, 6, 18, 15, 40] 中能被3整除的偶数的和元素和为${oushu.length}</div>`)
+
+        // 📕题目8：给一个数字数组，该数组中有很多数字0，将不为0的数据存入到一个新的数组中
+        let zero = [0,0,0,0,0,0,0,20,2,0,9,0]
+        let noZero = []
+        for(i=0;i<zero.length;i++){
+            zero[i] !== 0 ? noZero.push(zero[i]) : zero;
+        }
+        document.write(`<div>在数组[0,0,0,0,0,0,0,20,2,0,9,0]中，过掉掉0的新数组为${noZero}</div>`)
+
+    </script>
+</body>
+</html>

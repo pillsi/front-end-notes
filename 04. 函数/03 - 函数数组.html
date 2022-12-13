@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 📝例题1：计算学生的总分数
+        function getSum(arr=[]){
+            // arr=[]是形参的默认值，为的是解决实参为0的计算
+            // console.log(arr)
+            sum = 0;
+            for(let i =0; i<arr.length; i++)
+            sum = sum + arr[i]
+            console.log(sum)
+        }
+        getSum([1,2,3,4,5]);
+        getSum();
+        getSum([50,50]);
+
+        // 📝例题2：让实参变成变量（用户的输入），计算两数总和
+        function getTwo(a=0, b=0){
+            let sum = 0;
+            for (i=a; i<=b; i++){
+                sum = sum + i;
+            }
+            console.log(sum)
+        }
+        // 变量要写在函数外面，因为是先调用，再把num1, num2声明给a,b
+        let num1 = +prompt("请输入起始数")
+        let num2 = +prompt("请输入终止数")
+        getTwo(num1, num2)
+    </script>
+</body>
+</html>

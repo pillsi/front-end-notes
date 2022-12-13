@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ⭐️立即执行函数
+        // 意义：同名的变量间不相互污染，并且不用调用，直接执行
+        // 📝语法：写法1
+        (function(){
+            let num = 10;
+            console.log(num)
+        })(); 
+        (function(){
+            let num = 20;
+            console.log(num)
+        })();
+
+        (function(x,y){
+            console.log(x+y);
+        })(1,2);//其实小括号在这里就是调用，所以 这个里面是实参,上面function的括号后面是实参
+
+        // 实际应用看API
+        // 在应用上，用了执行函数的脚本再引入js后，它里面的变量不会污染全局，所以要用执行函数的语法(function(){}())
+
+        // 📝语法：写法2
+        (function(x,y){
+            console.log(x+y);
+        }(4,4));
+    </script>
+</body>
+</html>

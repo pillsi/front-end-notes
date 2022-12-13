@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数的return就是返回值
+        // ⭐️函数为什么要有返回值？拿到结果后，可以再被其他的功能去调用
+        // ⭐️函数return之后，不能换行，换行代表计算结束，之后所有内容都不执行
+        function fn(){
+            return 20;
+        }
+        let re = fn()
+        console.log(re) //返回的结果是20，因为：
+        // 20被调用后传给了fn(),然后把fn()变成一个叫re的变量，直接导出re就是导出fn()的值
+        // let re = fn()的概念就跟let re = propmt()
+
+        // 📝例题1：求两个数的和
+        function getTotalPrice(x=0, y=0){
+            return x + y;
+        }
+        let sum = getTotalPrice(10,70);
+        console.log(sum)
+    </script>
+</body>
+</html>

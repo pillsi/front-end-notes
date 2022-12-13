@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 📕题目：用户输入秒数，转换为时分秒
+        let userSecond = +prompt("请输入秒数")
+        function getTime(second){
+            // console.log(second);
+            let h = parseInt(second / 60 / 60 % 24)
+            let m = parseInt(second / 60 % 60)
+            let s = parseInt(second % 60)
+            // h = h < 10 ? '0' + h : h
+            // 记得m, s, 要重新赋值，才会生效
+            m = m < 10 ? '0' + m : m
+            s = s < 10 ? '0' + s : s
+            // console.log(h,m,s);
+            return(`${userSecond} coverts to time is ${h} hours, ${m} minutes, and ${s} seconds.`)
+        }
+        // 实参return的结果，要用变量名包起来，然后在document.write输出变量
+        let str = getTime(userSecond);
+        document.write(str)
+
+    </script>
+</body>
+</html>

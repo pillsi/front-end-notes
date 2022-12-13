@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 📝例题1：求任意数组的最小值
+        // 先用函数封装，设置形参和实参
+        function getMin(arr=[]){
+            let min = arr[0];
+            // 遍历数组，写计算公式
+            for(let i = 0; i<=arr.length;i++){
+                if(min>arr[i]){
+                    min = arr[i]
+                }
+            } 
+            // 返回结果
+            return min;
+        }
+        // 形参
+        let min = getMin([0,4,6,8,100])
+        console.log(min)
+
+        // 📕例题2：求任意数组的最小值升级版
+        // 同时求最大值和最小值
+        function getValue(arr = []){
+            let max = arr[0];
+            let min = arr[0];
+            // 最大值和最小值的变量可以都从i的第一位开始
+            for(let i =0; i<=arr.length; i++){
+                if(max<arr[i]){
+                    max = arr[i]
+                }
+                if(min > arr[i]){
+                    min = arr[i]
+                }
+            }
+            // 要求多个值，必须用[]，不用()
+            return [max, min]
+        }
+        // 把实参声明成一个新的变量，这样在别的地方好调用
+        let newArr = getValue([1,3,5,7,9])
+        console.log(newArr)
+    </script>
+</body>
+</html>

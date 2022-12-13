@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 通常来说，一段代码的名称只在符合全局，或者局部的条件下才能满足使用
+        global: 从<script>到<script>结束
+        non-global: 在某段函数内 */
+        
+        // 全局：
+        let num = 10;
+        function fn(){
+            return num;
+        }
+        console.log(fn());
+
+        // 局部：
+        function fnc(){
+            let str = 'red';
+            return str
+        }
+        console.log(fnc());
+
+        //❌ 作用域失效的例子：
+        // function getSum(arr=[]){
+        //     let sum = 0;
+        //     for(let i = 0; i<=arr[i]; i++){
+        //     }
+        //     console.log(i); //i is not defined, 因为它不在局部内生效
+        // }
+        // getSum([1,2,3,4,5])
+
+        // ⭐️作用域链：函数套函数的情况时，在相同的函数名称下，返回给的是最近的
+        
+        function fn(){
+            let num = 20;
+                function fun(){
+                    let num = 30;
+                    console.log(num);
+                }
+                fun() //30, 因为就近查找。如果把let num = 30隐藏掉，结果继续往上爬到全局，找到num = 20；
+        }
+        fn()
+
+    </script>
+</body>
+</html>

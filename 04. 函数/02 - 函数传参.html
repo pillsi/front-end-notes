@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="color: steelblue;">
+        function addTwo(){<br>
+            let num1 = 50;<br>
+            let num2 = 50;<br>
+            let sum = num1 + num2;<br>
+            document.write(sum)<br>
+        }<br>
+        addTwo();<br>
+    </p>
+    <p>函数如果这么写，是死的，只能出50+50的结果。如果需要让用户自己选择数字，那就要用传参。</p>
+    <p>⭐️传参函数语法：</p>
+    <p style="color:steelblue;"><span style="color: purple;">function </span>函数名(<span style="color: pink;">传参列表</span>)<br>{
+        <span style="color:pink;">函数体</span><br>}</p>
+    <script>
+        // 📝例题1：求任意两数的和
+        function getSum(num1, num2){
+            document.write(num1+num2)
+        }
+        getSum(100,100) //把100,100传回给num1,num2，这就是传参的过程
+
+        document.write(`<br>`)
+
+        // 📝例题2：求1~任意数内的和
+        function addNum(end){ //end就是从底部的100传进来的数
+            let sum = 0;
+            for(let i=1; i<=end; i++){ //循环到end数结束
+                sum = sum + i
+            };
+            document.write(sum)
+        }
+        addNum(100);
+
+        document.write(`<br>`)
+
+        // 📝例题3：求任意两数的和
+        function getTwo(start, end){ //形参：开头数字，结尾数字
+            let sum = 0;
+            for(i = start; i<=end; i++){ //i就不是1开始了，是开头数字start
+                sum = sum + i;
+            }
+            document.write(sum);
+        }
+        getTwo(100,101) //实参：
+
+        document.write(`<br>`)
+
+        // ⭐️形参和实参的区别：声明的时候是形参，调用的时候是实参
+
+
+        // 📝例题4：求任意两数和，但要考虑如果用户输入的是0或者未输入，此刻结果就变成了NAN，所以要写上默认的形参为0
+        function getTwoSum(start = 0, end = 0){
+            document.write(start+end)
+        }
+        getTwoSum();
+        // 这里不管实参输入什么，都会改变形参，所以形参的等式用怕会改变运算结果
+
+    </script>
+</body>
+</html>

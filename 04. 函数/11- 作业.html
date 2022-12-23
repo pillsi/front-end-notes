@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ♦️错题1：
+        // 有以下代码 他的结果是?
+        // function fn(num1,num2){
+        //     return num1 + num2
+        // }
+        // alert(fn(10,20,30))//30, 因为：
+        /* 实参传递给形参， 简单说就是 10 给 num1，  20给num2， 30没人接，
+        就不传递了，最后是 10+20，这是典型 的 实参多于形参， 按照顺序传递和接受 */
+
+        // ♦️错题2：
+        // 求以下函数运算的结果（）
+        // function fn(){
+        //     console.log(100)
+        // }
+        // console.log(fn()) //100 undefined, 因为：
+        /* 调用fn()输出 100，后面还输出fn()
+        函数如果没有return 则默认返回undefined */
+
+        /* 📕题目1：
+        1. 封装函数, 名字为sum
+        2. 功能: 根据传入的两个数,求和并且返回求和的结果（函数必须有return返回值）*/
+        function getSum(x=0, y=0){
+        return x + y;
+        }
+        let sum = getSum(1,2)
+        console.log(sum);
+
+        /* 📕题目2：
+        1. 函数名为 changeNum()
+        2. 调用函数时,  `changeNum(1，2)`
+        3. 经过函数内部处理后,输出  `第一个值的结果是2  第二个值的结果是1`
+        4. 可以多调用两次*/
+        function changeNum(x,y){
+            console.log(y);
+            console.log(x);
+            return x;
+            return y;
+        }
+        changeNum("pink","red")
+        
+        /* 📕题目3：
+        1. 运行程序后, 浏览器显示输入确认框(prompt)
+        2. 第一个输入确认框提示输入银行卡余额
+        3. 第二个输入确认框提示输入当月食宿消费金额
+        4. 第三个输入确认框提示输入当月生活消费金额
+        5. 输入完毕后,在页面中显示银行卡剩余金额
+        6. 提示: 所有功能代码封装在函数内部（函数需要把余额返回）*/
+        
+        // function bank(){
+        //     let input = +prompt("请输入银行卡余额")
+        //     let rent = +prompt("请输入食宿消费")
+        //     let expense = +prompt("请输入生活消费")
+        //     let balance = input - rent - expense
+        //     let yue = document.write(`您的银行卡余额为${balance}`)
+        //     return yue;
+        // }
+        // bank();
+
+        /* 📕题目4：
+        1. 封装一个函数,可以求任意数组的和 或 平均值
+        2. 函数可以传递2个参数，比如  handleData(arr, true)
+        3. 参数一： 接受实参传递过来的数组
+        4. 参数二:  布尔类型如果是true或者不传递参数 是求和操作，
+                    如果传递过来的参数是 false 则是求平均值
+        */
+
+            function handleData(arr=[],value){
+                let sum = 0;
+                for(let i = 0; i<arr.length; i++){
+                    sum = sum + arr[i];
+                }
+                if(value){
+                    return sum;
+                }else{
+                    let avg = sum / arr.length; //一定要先得到sum的值后，avg才能生效，avg的等式不能写在一开头
+                    return avg;
+                }
+            }
+            
+            console.log(handleData([3,3],true));
+            console.log(handleData([3,3],false)); 
+        
+        /**/
+
+        
+
+    </script>
+</body>
+</html>
+
+

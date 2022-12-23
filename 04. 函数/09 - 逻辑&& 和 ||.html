@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // &&， || 都是逻辑中断的字符
+
+        // 记住&&：一假则假，后面所有不再执行
+        console.log(false && 22); //fase
+        console.log(1>2 && true); //fase
+
+        let age = 18;
+        console.log(false && age++);
+        console.log(age);//18, 因为上一步的age++没有被成功执行
+
+        // 如果都为真，执行最后的结果
+        console.log(2>1 && true);
+
+        // 记住||，一真则真, 执行最前的结果
+        console.log(true || false);
+        console.log(1 || 2);
+
+        let date = 20;
+        console.log(false || date++);
+        console.log(date);//21, 上一步的date++被成功执行
+
+        // 记住：所有布尔值0，"", undefined, null, nan转换为自己，不为false
+    </script>
+</body>
+</html>

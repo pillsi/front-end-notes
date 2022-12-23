@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象是可以储存不同类型的多种数据，比如：
+        Aiden=[180,180,180] //这句话无法知道三个180分别代表什么
+        let aiden = {
+            height: '180cm',
+            weight: '180斤',
+            houseSize: '180 sq/ft'
+        }
+        // 想象一下就像你去相亲一个对象，要知道他的基本年龄，长相，性格...
+        // 对象可以包含属性和方法：
+        let object = {
+            name: 'haley', //这是属性
+            //函数，这是方法
+        }
+        // 对象的增删改查
+        let xiaomi = {
+            item:"MI",
+            sku:"100012816024",
+            wight:"0.55 kg",
+            production:"China"
+        }
+        xiaomi.name = "小米10 Plus"; //改
+        xiaomi.color = "pink"; //增，与改一样，如果对象没有这个属性就是新增
+        console.log(xiaomi); //查
+        // 不建议用删
+
+        // ⭐️另一种查：如果属性名是字符串的形式，比如
+        let iphone = {
+            "iphone-name": "iphone12 max pro"
+        }
+        console.log(iphone["iphone-name"]);
+    </script>
+</body>
+</html>

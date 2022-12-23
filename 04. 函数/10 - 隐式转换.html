@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // +： 有字符串的加法 “” + 1， 结果是1
+        console.log(""+1);
+        // -： 有字符串的减法 “” - 1， 结果是-2
+        console.log((""-1));
+        // null：看作是0
+        console.log(null + 3); //3
+        // undefined: 做任何操作都是nan
+        console.log(undefined + 3); //NaN
+        // undefined == null ？ true 因为值都为空
+        // undefined === null ? false 因为数据类型不相等
+        console.log(NaN + 3); //nan
+        // NaN: 做任何操作都是NaN
+    </script>
+</body>
+</html>

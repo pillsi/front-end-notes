@@ -8,6 +8,7 @@
 </head>
 <body>
     <script>
+        // ⭐️属性的概念：
         // 对象是可以储存不同类型的多种数据，比如：
         Aiden=[180,180,180] //这句话无法知道三个180分别代表什么
         let aiden = {
@@ -15,12 +16,34 @@
             weight: '180斤',
             houseSize: '180 sq/ft'
         }
+        // 
         // 想象一下就像你去相亲一个对象，要知道他的基本年龄，长相，性格...
         // 对象可以包含属性和方法：
         let object = {
             name: 'haley', //这是属性
-            //函数，这是方法
+            sayHi: function(){
+                document.write('Hi')
+            }//对象能做什么事，比如说hi的函数，这是方法
         }
+
+        // ⭐️方法的概念：
+        let obj = {
+            item: "Nintendo Switch",
+            playGame: function(){ //匿名函数，这里playGame是函数function的变量名
+                console.log('I am playing Pokemon');
+            }
+        }
+        obj.playGame(); //调用函数，不需要log，如果用console.log(obj,playGame(),会出现undefined, 因为函数没有return)
+        // 跟document.write('')的结构是一样的
+
+        let obj2 = {
+            math: function(x=0, y=0){
+                console.log(x+y);
+            }
+        }
+        obj2.math(1,2); //实参传形参，函数要做加法
+
+
         // 对象的增删改查
         let xiaomi = {
             item:"MI",
@@ -38,6 +61,20 @@
             "iphone-name": "iphone12 max pro"
         }
         console.log(iphone["iphone-name"]);
+
+        
+        // 📝 作业：通过对象，分别打印我想唱歌，我想跳舞
+        let obj3 = {
+            singing: function(){
+                console.log('我想唱歌');
+            },
+            dance: function(){
+                console.log('我想跳舞');
+            }
+        }
+        obj3.singing();
+        obj3.dance();
+
     </script>
 </body>
 </html>

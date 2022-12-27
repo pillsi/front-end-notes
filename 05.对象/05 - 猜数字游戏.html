@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 📕例题1：让用户输入1~10之内的数字，直到猜对
+
+        // function getRandom(N, M){
+        //     return Math.floor(Math.random() * (M - N + 1) + N)
+        // }
+        // let random = getRandom(1, 10);
+
+        // while(true){
+        // let num = +prompt("请输入一个数字");
+        // if(num>random){
+        //     alert("猜大啦");
+        // } else if (num<random){
+        //     alert("猜小啦");
+        // } else if (num === random){
+        //     alert("恭喜你！")
+        //     break;
+        // }
+        // }
+
+        // 📕例题2：升级版：只能猜三次（用到for循环和toggle开关变量）
+
+        function getRandom(N, M){
+            return Math.floor(Math.random() * (M - N + 1) + N)
+        }
+        let random = getRandom(1, 10);
+
+        // 设定开关键，如果超过3次就显示”次数已用完“
+        let toggle = true;
+
+        // 已明确要循环3次，就用for
+        for (let i = 1; i <= 3; i++){
+        let num = +prompt("请输入一个数字");
+        if(num>random){
+            alert("猜大啦");
+        } else if (num<random){
+            alert("猜小啦");
+        } else{
+            // 3次内猜对后，不应该再弹出三次用完的对话框，所以要把开关关上
+            toggle = false;
+            alert("恭喜你！");
+            break;
+        }
+        }
+        // 要写在for循环外面，不然每输一次数字都会谈一次
+        if(toggle){
+            alert("三次已用完")
+        }
+
+
+    </script>
+</body>
+</html>

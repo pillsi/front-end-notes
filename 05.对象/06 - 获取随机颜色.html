@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        height: 300px;
+        width: 300px;
+    }
+</style>
+<body>
+    <div></div>
+    <script>
+        //⭐️需求：函数接收一个boolean类型的参数，如果是true则生成#ffffff的随机参数，
+        //如果是false，生成rgb(255,255,255)的随机参数
+        
+        // 1.先生成函数
+        function getRandomColor(toggle = true){
+            // 3. 判断boolean
+            if(toggle){
+                // 7. 把16进制的颜色写死
+                // 8. 给f变量
+                // let f1 = Math.floor(Math.random() * 10)
+                // let f2 = Math.floor(Math.random() * 10)
+                // let f3 = Math.floor(Math.random() * 10)
+                // let f4 = Math.floor(Math.random() * 10)
+                // let f5 = Math.floor(Math.random() * 10)
+                // let f6 = Math.floor(Math.random() * 10)
+                // return `#${f1}${f2}${f3}${f4}${f5}${f6}`
+                // 9. ⭐️ 进阶：用字符串拼接的形式，f为随机，每次把f加上，直到加6次
+                // 10. 先设定一组arr
+                let arr = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+                let str = '#';
+                for (i = 1; i<=6; i++){
+                    let random = Math.floor(Math.random() * arr.length)
+                    // 每次给str后面加f的变量
+                    str = str + arr[random]
+                }
+                return str;
+
+            } else{
+                // 4.先把颜色写死，再改
+                // return rgb(255,255,255)
+                // 5. 设定rgb内三个数字的随机变量：
+                let r = Math.floor(Math.random() * 256)
+                let g = Math.floor(Math.random() * 256)
+                let b = Math.floor(Math.random() * 256)
+                // 6. 再把变量传回给返回值
+                return `rgb(${r}, ${g}, ${b})`
+            }
+        }
+        //2. 传参boolean value
+        console.log(getRandomColor(true)); 
+
+        const div = document.querySelector('div')
+        div.style.backgroundColor = getRandomColor();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 遍历对象的语法： for...in
+        // 对象是无序的，没有下标，也没有长度
+        // 使用场景：要打印3个产品卡片，在对象里输入产品数据
+        let game1 = {
+            item: "Nintendo Switch",
+            color: "red and blue"
+        };
+        let game2 = {
+            item: "Sony PS5",
+            color: "grey"
+        };
+        let game3 = {
+            item: "Mircosoft XBOX",
+            color: "green"
+        };
+
+        for (let key1 in game1){
+            console.log(game1[key1]); //⭐️重点：这里打印不能用game1.key1, 因为console.key1输出的值是字符串，我们需要用[]把它转换为“”，然后才能渲染
+        };
+        for (let key2 in game2){
+            console.log(game2[key2]);
+        };
+        for (let key3 in game3){
+            console.log(game3[key3]);
+        }
+        
+        // 拓展：为什么for in不能给数组用？因为它输出的字符串，不是对象
+
+        // 遍历对象里的数组
+        // 使用场景：打印出所有数据银行卡的名称
+        // ♦️1. 搭建数据
+        let card = [
+            {name: "Double Points", type: "Credit Card"},
+            {name: "Plutium", type: "Debit Card"},
+            {name: "Merilla", type: "Investing"}
+        ]
+        // ♦️2. 遍历数组,注意这里用for, 不用for in，因为是数组！
+        for(let i = 0; i<card.length; i++){
+            console.log(i); //打印下标
+            console.log(card[i]); //打印数组里的所有对象
+            console.log(card[i].type); //打印数组里所有的type属性值
+        }
+
+    </script>
+</body>
+</html>

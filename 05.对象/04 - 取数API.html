@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Math.PI);
+        console.log(Math.ceil(2.5)); //天花板，向上取 3
+        console.log(Math.floor(2.5)); //地板，向下取 2
+        console.log(Math.round(2.5)); //折中，四舍五入 3
+        console.log(Math.max(1,2,3,4,5)); //5
+        console.log(Math.min(1,2,3,4,5)); //1
+
+        //Math.floor跟parseInt的区别：都取整数，但是floor只支持数字类型，但是parseInt有隐式转换可以把str转换成number
+
+        //⭐️重点：Math.random() 取0-1，含0不含1
+        //📕 例题1：取1-10之间的整数
+        console.log(Math.floor(Math.random()  * 11));
+        
+        //📕 例题2：求随机一种颜色
+        // 第一步：创建数组
+        let arr = ['red', 'pink', 'blue', 'black'];
+        // 第二步：创建随机公式，并给它声明
+        let random = (Math.floor(Math.random() * arr.length));
+        // 第三步：打印数组的随机数字
+        console.log(arr[random]); //这里用arr[random]不是arr.random，因为属性名是字符串的形式
+
+        //⭐️ 套公式：生成N~M之间的整数，可替换
+        function getRandom(N, M){
+            return Math.floor(Math.random() * (M - N + 1) + N)
+        }
+        console.log(getRandom(4,8)); 
+
+        //📕 例题：随机点名
+
+        // let names = ['赵云', '黄忠', '马超', '刘备', '曹操']
+        // let randomName = Math.floor(Math.random() * names.length)
+        // console.log(names[randomName]);
+
+        // 封装成函数
+        function randomName2(){
+            let names = ['赵云', '黄忠', '马超', '刘备', '曹操']
+            let random = Math.floor(Math.random() * names.length)
+            return names[random]
+            //删掉被点名的那个人
+            let out = names.splice(random, 1)
+            console.log(out[0]);
+        }
+        let name = randomName2()
+        console.log(name); 
+
+    </script>
+</body>
+</html>

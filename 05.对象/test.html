@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+    }
+</style>
+<body>
+    <div>今日幸运色：</div>
+    <script>
+        //⭐️需求：函数接收一个boolean类型的参数，如果是true则生成#ffffff的随机参数，
+        //如果是false，生成rgb(255,255,255)的随机参数
+
+        function getRandomColor(toggle = true){
+            if(toggle){
+                let arr = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+                let str = '#'
+                for (let i = 1; i<=6; i++){
+                let randomF = Math.floor(Math.random()*arr.length)
+                str = str + arr[randomF]
+                }
+                return str
+            } else{
+                let r = Math.floor(Math.random()*256);
+                let g = Math.floor(Math.random()*256);
+                let b = Math.floor(Math.random()*256);
+                return `rgb(${r},${g},${b})`
+            }
+        }
+        console.log(getRandomColor()); 
+
+        const div = document.querySelector('div');
+        div.style.backgroundColor = getRandomColor();
+
+        // 📕作业1：点名: 每次刷新网页运行, 在控制台 随机输出一位同学的名字 ["老赵", "老李", "小传", "小黑"]，如果输出了，则数组中删除这个名字
+        let names = ["老赵", "老李", "小传", "小黑"];
+        let random = Math.floor(Math.random()*names.length)
+        console.log(names[random]);
+        let out = names.splice(random,1);
+        console.log(out[0]);
+
+        // 📕作业2：练习调用对象
+        /*
+        1. 声明一个变量per, 类型为对象类型
+        2. 该对象的属性为性别,年龄,爱好(3个)
+        3. 该对象的方法有 说话, 吃饭(2个)
+        4. 在控制台分别调用该对象的属性和方法
+        */
+       let per = {
+        sex:"male",
+        age:"18",
+        hobby:"movie, music, cooking",
+        speak: function(){
+            console.log("我想说话");
+        },
+        eathing: function(){
+            console.log("我想唱歌");
+        }
+       };
+
+       console.log(per["sex"]);
+       console.log(per.age);
+       console.log(per.hobby);
+
+       per.speak();
+       per.eathing();
+    
+       // 📕作业3：练习调用对象
+        /*
+        1. 对象声明完毕后, 调用对象中的吃饭的方法
+        2. 提示: 对象中的方法本质是函数, 调用需要加()
+        3. 方法也可以传递参数的
+        */
+       let lunch = {
+        veggie: function(veggie){
+            console.log(`${veggie}`);
+        },
+        meat: function(meat){
+            console.log(`${meat}`);
+        }
+       };
+       lunch.veggie("tomato");
+       lunch.meat("chicken");
+
+    // 📕作业4：猜数字游戏，最多猜8次
+        function getRandom(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+        let randomNum = getRandom(10,20);
+
+        let toggle = false;
+
+        for(let i = 1; i<= 8; i++){
+            let guessNum = prompt("猜个数");
+
+        if(guessNum>randomNum){
+            alert("你的大了");
+        } else if (guessNum<randomNum){
+            alert("你的小了");
+        } else {
+            toggle = true;
+            alert("猜对了")
+            break;
+        }
+        }
+        if(!toggle){
+            alert("继续加油鸭")
+        }
+        
+
+    </script>
+</body>
+</html>

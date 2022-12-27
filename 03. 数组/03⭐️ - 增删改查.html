@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="./增删改查.png" alt="">
+    <!-- <img src="./增删改查.png" alt=""> -->
     <script>
         // ⭐️改：
         // 🧠思路：通过下标来定位，或者遍历后统一加内容修改
@@ -58,6 +58,11 @@
         let car = ["benz", "bmw", "audi", "honda"]
         car.splice(3,1)
         document.write(car)
+
+        // splice可以做添加
+        let arr2 = ['a', 'b', 'c']
+        arr2.splice(2, 0, 'd')
+        console.log(arr2);
 
 
     </script>

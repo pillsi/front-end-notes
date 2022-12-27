@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>数据分为简单数据类型，复杂（引用）数据类型</h3>
+    <p>简单数据类型包括：string, number, boolean, null, undefined, 它们的共同点都是直接给值</p>
+    <p>复杂数据类型包括：array, object, date等，它们都是被引用的，不能直接获取值</p>
+    <img src="./07-数据类型.png" alt="">
+    所有的数据类型都是存到内存里
+    比如 let num = 10, num这个变量就是直接存到栈里，可以被找到
+    再比如new obj = {age: 18}，obj这个变量也是存到栈里，但是他是一个被引用的地址0x123...，通过这个地址，可以从堆里面找到age:18
+</body>
+</html>

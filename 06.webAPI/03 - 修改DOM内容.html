@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    两个API修改DOM元素：
+    1）innerText: 只修改纯文本；
+    2）innerHTML: 可改文本，可改标签
+
+    <!-- 修改文本 -->
+    <div class="test">我是未被修改的文字</div>
+
+    <!-- 中奖名单 -->
+    <div class="spin">
+        <p>第一名是:<span id="one">aaa</span></p>
+        <p>第一名是:<span id="two">aaa</span></p>
+        <p>第一名是:<span id="three">aaa</span></p>
+    </div>
+
+    <!-- 修改图片 -->
+    <img src="./desktop_1.jpg" alt="" height="300px">
+
+    <script>
+        // 先被获取
+        const text = document.querySelector('.test')
+        console.log(text);
+        // 修改元素文本
+        text.innerText = "我是被修改完的文字"
+        // 修改元素标签
+        text.innerHTML = "<b>我是被修改完且加粗的文字</b>"
+
+    // 📕例题1：年会抽奖一二三等奖
+    // 1. 先定义数组和元素：
+    let arrName = ["奔驰","宝马","特斯拉","小飞驰"]
+    // 2. 获取随机元素
+    let random = Math.floor(Math.random()*arrName.length)
+    console.log(arrName[random]);
+    // 3. 获取DOM文本元素
+    const one = document.querySelector('#one')
+    // 4. 修改one标签的文本
+    one.innerHTML = arrName[random]
+    // 5. 删除中奖的人，在log检查了剩下的人数组元素
+    arrName.splice(random,1);
+    console.log(arrName);
+    
+    // 要重新生成随机数
+    const random2 = Math.floor(Math.random()*arrName.length)
+    const two = document.querySelector('#two')
+    two.innerHTML = arrName[random2]
+
+    // 📕例题2：修改图片：对象.属性名
+    const img = document.querySelector('img')
+    console.log(img);
+    img.src="./desktop_2.jpg"
+    img.title="NYC view"
+
+    //  📕例题3：随机更换图片
+    // 1. 先创建图片路径
+    // 2. 获取元素
+    const img2 = document.querySelector('img')
+    // 3. 创建随机数
+    function getRandom(N, M){
+            return Math.floor(Math.random() * (M - N + 1) + N)
+        }
+    const randomImg = (getRandom(1,10)); //有十张图 
+
+    // 4. 修改元素
+    img2.src = `./desktop_${randomImg}.jpg`
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    语法：document.querySelector('xx')，跟CSS选择器很相似
+    1. querySelector在多个元素下，只能选择第一个，而且可以作为对象修改
+    2. querySelectorAll可以选择所有的元素，但要修改就要进行对象遍历
+
+    <div class="box">123</div>
+    <div id="nav">导航1</div>
+    <ul>
+        <li>我是1</li>
+        <li>我是2</li>
+        <li>我是3</li>
+    </ul>
+
+    <ul class="list">
+        <li>首页</li>
+        <li>产品</li>
+        <li>联系</li>
+    </ul>
+    <script>
+        // ⭐️选择器后面必须是字符串
+        const box = document.querySelector('div') //或者用.box
+        console.log(box);
+
+        const nav = document.querySelector('#nav') //id要用#
+        console.log(nav);
+
+        const li = document.querySelector('ul li:first-child') //层级关系用空格，然后用第几个选择器,，或者用nth-child(1)
+        console.log(li);
+
+        // 修改单个DOM的样式, 可以看成修改对象的属性
+        li.style.color = 'red';
+
+        // querySelectorAll, 获取多个DOM元素
+        // 虽然结果是[li, li ,li]，但这是伪数组，因为不能使用push, splice...
+        const allLi = document.querySelectorAll('ul li');
+        console.log(allLi);
+
+        // 获取多个dom下面的所有元素
+        const lists = document.querySelectorAll('.list li')
+        for (let i = 0; i<lists.length; i++){
+            console.log(lists[i]);
+        }
+
+        // 古早的选择器们：document.getElementById('nav')
+        // document.getElementByTagName('div')
+        // document.getElementByClassName('w')
+
+    </script>
+</body>
+</html>

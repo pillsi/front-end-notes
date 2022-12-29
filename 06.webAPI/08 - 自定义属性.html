@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-id = "1", data-sm = "unknown">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <script>
+        // 有标准属性和自定义属性，标准属性比如checked, disable...
+        // 在html5中，我们可以自定义属性，后面的事件会用得比较多（之前用getAttribute，那些都可以忘了）
+        const div = document.querySelector('div')
+        //获取它的关键词是dataset，是一个对象，包含里面所有data-的属性
+        console.log(div.dataset.id); //获得1
+        console.log(div.dataset.sm); //获得unknown
+    </script>
+</body>
+</html>

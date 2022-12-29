@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <!-- 📕例题1：修改用户输入的内容 -->
+    <input class="input1" type="text" value="电竞椅"> 
+
+    <!-- 📕例题2：修改选择框 -->
+    <input class="input2" type="checkbox" checked>
+
+    <!-- 📕例题3：修改button是否能点击 -->
+    <button disabled>提交</button>
+
+
+    <script>
+        //📕例题1：修改用户输入的内容
+
+        // 如何获取和拿到用户输入的内容？
+        const input = document.querySelector('.input1')
+        console.log(input.value);
+        // 如何修改输入的内容？
+        input.value = '人体工学椅'
+        // 如何把输入的文字内容变成星号？
+        input.type = "password"
+        // 注意：这里的修改内容不能用innerHTML, 因为Input在这里是属于复杂数据类型
+
+        //📕例题2：修改选择框: ⭐️只能接收boolean参数
+        const input2 = document.querySelector('.input2')
+        console.log(input2);
+        input2.checked = true; //checked:true为勾上，false为未勾上
+        // 在实际应用场景中，比如选择‘全选为true’，只需要遍历一遍子元素的checked都为true，就会被一并选上
+
+        // 📕例题3：修改button是否能点击
+        const button = document.querySelector('button')
+        console.log(button);
+        button.disabled=false; //disabled = false是可以选，true是禁选
+
+
+
+
+    </script>
+ </body>
+ </html>

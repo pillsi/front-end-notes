@@ -43,11 +43,11 @@
     const one = document.querySelector('#one')
     // 4. 修改one标签的文本
     one.innerHTML = arrName[random]
-    // 5. 删除中奖的人，在log检查了剩下的人数组元素
+    // 5. 删除中奖的人，再log检查剩下的人数组元素
     arrName.splice(random,1);
     console.log(arrName);
     
-    // 要重新生成随机数
+    // 6. 要重新生成随机数
     const random2 = Math.floor(Math.random()*arrName.length)
     const two = document.querySelector('#two')
     two.innerHTML = arrName[random2]

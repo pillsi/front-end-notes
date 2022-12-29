@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: brown;
+    }
+
+    .nav{
+        color: aliceblue;
+        margin: 0 auto;
+    }
+
+    .box{
+        width: 300px;
+        height: 300px;
+        background-color: orange;
+        margin: 0 auto;
+        border: 1px solid saddlebrown;
+    }
+
+    .active{
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+        margin: 0 auto;
+        border: 1px solid teal;
+    }
+</style>
+<body>
+    <h3>className和classList(后者重点）</h3>
+    <p>类名的好处是可以简洁JS的代码，不用每项element.style.color..单独去写</p>
+    <div class="nav">123</div>
+    <div class="list">234</div>
+    <script>
+        //className
+        // 语法：变量名.className（‘element’) = 新样式的类名
+        const div = document.querySelector('div')
+        // 关键字还是class, className只是名称，为了不跟key words冲突
+        div.className = 'box'
+        // className会覆盖前面的类名，比如有个.nav{color: red}，此时的效果就不生效
+        // className只能有一个
+        // 想要生效，就要改成：
+        div.className = 'nav box' //两个效果并列
+
+        // ⭐️ClassList（重点）
+        // 语法：变量名.classList.add/remove/toggle('新样式的类名')，注意没有=，没有.
+        // classlist是给对象加方法，所以是小（）
+        const list = document.querySelector('.list')
+        list.classList.add('active')
+
+        // remove是删掉，toggle是取反，有则变无，无则变有。比如开关灯
+        list.classList.toggle('active') //toggle比较常用
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 🔎 使用场景：活动倒计时。注册条款，60秒后才能点击下一步
+        // 📝 基本语法：setInterval(函数名+时间)
+        // 📕 setInterval(function(){ //匿名函数写法
+        //     console.log("匿名函数每秒打印一次");
+        // }, 1000)
+        
+        // ⭐️ 开启定时器
+        // 📝 基本语法：setInterval(函数名+每隔多少时间执行1次)
+        function fn(){
+            console.log("普通函数每毫秒打印一次");
+        }
+        setInterval(fn, 100); //注意这里调用的是函数名，不加（）
+
+        // ⭐️ 关闭定时器
+        // 📝 基本语法：clearInterval(变量名)
+        // 注意：如果log每个定时器，就会看到他们都有独一份的id，如果要关闭哪个定时器，就要匹配上对应的id号码
+        function fn(){
+            console.log("Hello");
+        }
+        let timer = setInterval(fn, 1000);
+        clearInterval(timer)
+
+    </script>
+</body>
+</html>

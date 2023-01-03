@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 300px;
+        height: 100px;
+        background-color: rgb(202, 202, 202);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        padding-left: 100px;
+        font-size: 16px;
+    }
+
+    input{
+        border: 0;
+        padding: 2px 4px;
+    }
+    button{
+        margin: 0;
+        padding: 0;
+        color: rgb(255, 255, 255);
+        font-size: 12px;
+        border: 0;
+        background-color: rgb(93, 166, 189);
+        border-radius: 2px;
+        padding: 2px 4px;
+    }
+    
+</style>
+<body>
+    <div class="box">
+        <div class="name">
+            <input class="input-name" type="text" placeholder="账户" value="">
+        </div>
+         <div class="pwd">
+            <input class="input-pwd" type="password" placeholder="密码" value="">
+            <button>显示</button>
+        </div>
+    </div>
+
+    <script>
+        const inputPwd = document.querySelector('.input-pwd')
+        const btn = document.querySelector('button')
+
+        btn.addEventListener('click', function(){
+            if(inputPwd.type === "password"){
+            inputPwd.type = "text"
+            btn.innerHTML="隐藏"
+            }else{
+            inputPwd.type = "password"
+            btn.innerHTML="显示"
+            }
+        })
+    </script>
+</body>
+</html>

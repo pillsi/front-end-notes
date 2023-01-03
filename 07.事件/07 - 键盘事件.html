@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="input1" type="text" placeholder="搜索一下"/>
+    <input class="input2" type="password" placeholder="搜索两下"/>
+
+    <script>
+        // keydown(按下)，keyup(抬起)
+        const input1 = document.querySelector('.input1')
+        input1.addEventListener('keydown', function(){
+            console.log(11);
+        })
+        input1.addEventListener('keyup', function(){
+            console.log(22);
+        })
+
+        // input（键入）
+        const input2 = document.querySelector('.input2')
+        input2.addEventListener('input', function(){ //这里得'input'是键盘事件的方法, 不是tag
+            console.log(input2.value);
+        })
+
+    </script>
+</body>
+</html>

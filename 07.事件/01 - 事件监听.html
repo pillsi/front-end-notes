@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        position: relative;
+        background-color: orange;
+        width: 500px;
+        height: 100px;
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .close{
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: 0;
+        opacity: 0.5;
+    }
+    
+</style>
+<body>
+    <p>事件监听三要素：
+        事件元素，事件类型，事件调用的函数
+    </p>
+    <p>事件监听的语法：元素对象.addEventListener('事件类型'，要执行的函数)</p>
+    
+    <button>点击一下</button>
+
+    <div class="box">
+        <p>我是广告</p>
+        <button class="close">X</button>
+    </div>
+    <script>
+        // 1. 创建事件元素
+        // 2. 注册（获取）事件
+        const btn = document.querySelector('button')
+        // 3. 监听事件，执行函数
+        btn.addEventListener('click', function(){
+            return alert("你好呀")
+        })
+
+        // 📕例题：关闭广告
+        const closeBtn = document.querySelector('.close')
+        const box = document.querySelector('.box')
+        closeBtn.addEventListener('click', function(){
+            box.style.display = 'none';
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="old">click</button>
+    <button class="new">click-2</button>
+<script>
+    // 1. 垃圾回收机制
+    const click = document.querySelector('.old')
+    click.addEventListener('click',function(){
+        const num = Math.random()
+        console.log(num);
+    })
+    // 0.07478216386530323
+    // 0.5034714888766809
+
+    // 这里的const num可以被多次赋值使用，是因为用到了垃圾回收机制
+    // 等每一次的函数执行完毕后，这个const的值就会被销毁，生成新的值，所以不会冲突，可以减缓内存占用
+    
+    // 2. 事件监听的L0, L1
+    // 古早版的L0的监听事件语法是：
+    const btn = document.querySelector(".new")
+    btn.onclick = function(){
+        alert("11")
+    }
+    btn.onclick = function(){
+        alert("11")
+    }
+    // 但这样的问题会有：它的“22”会覆盖“11”，如果我想要两个结果同时出来：
+    btn.addEventListener('click',function(){
+        alert("11")
+    })
+    btn.addEventListener('click',function(){
+        alert("22")
+    })
+
+    // 第二个问题就是L0的只有冒泡，没有捕获
+    
+    
+</script>
+</body>
+</html>

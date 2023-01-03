@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+    <script>
+        // 📕回调函数，就是把函数A传递给函数B使用的过程
+        // call back function ex1:
+        function fn(){
+            console.log("我是回调函数");
+        }
+        fn();
+        setInterval(fn, 1000)
+        // 在这个函数嵌套中，fn把自己当参数传给了setInterval，并且在1000s后执行，fn()就是那个回调函数
+
+        // call back function ex2:
+        const btn = document.querySelector('btn')
+        btn.addEventListener('click', function(){
+            console.log(("我也是回调函数"));
+        })
+        // 在举例2中，addEventListener作为回调函数，把自己传给了function()，并且在click点击后执行
+    </script>
+</body>
+</html>

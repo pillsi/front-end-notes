@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #c0c0c0;
+      width: 500px;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    th {
+      background-color: #09c;
+      font: bold 16px "微软雅黑";
+      color: #fff;
+      height: 24px;
+    }
+
+    td {
+      border: 1px solid #d0d0d0;
+      color: #404060;
+      padding: 10px;
+    }
+
+    .allCheck {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th class="allCheck">
+        <input type="checkbox" name="" id="checkAll"> <span class="all">全选</span>
+      </th>
+      <th>商品</th>
+      <th>商家</th>
+      <th>价格</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米手机</td>
+      <td>小米</td>
+      <td>￥1999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米净水器</td>
+      <td>小米</td>
+      <td>￥4999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米电视</td>
+      <td>小米</td>
+      <td>￥5999</td>
+    </tr>
+  </table>
+  <script>
+//     const checkAll = document.querySelector('#checkAll')
+//     const cks = document.querySelectorAll('.ck')
+
+//     // 全选控制单选
+//     checkAll.addEventListener('click', function(){
+//         for (let i=0; i<cks.length; i++){
+//             cks[i].checked = checkAll.checked
+//         }
+//     })
+
+//     // 单选控制全选
+//     for(let i=0; i<cks.length; i++){
+
+//     cks[i].addEventListener('click',function(){
+//             // 把单选的个数等于单选的总数，他们就可以绑定给全选
+//             // checkAll.checked是伪类选择器：意思是已经被选择的复选框
+//             checkAll.checked = document.querySelectorAll('.ck:checked').length === cks.length;
+//             // 
+//     }
+//     )
+// }
+
+    // 📕新知识点：伪类选择器：checkAll:checked 被勾选的checkAll
+    const checkAll = document.querySelector('#checkAll')
+    const checkSingle = document.querySelectorAll('.ck')
+
+    checkAll.addEventListener('click', function(){
+        for(let i=0;i<checkSingle.length;i++){
+            checkSingle[i].checked = checkAll.checked
+        }
+    })
+
+    for (let i = 0; i < checkSingle.length; i++)
+    checkSingle[i].addEventListener('click', function(){
+        checkAll.checked = document.querySelectorAll('.ck:checked').length === checkSingle.length
+    })
+
+  </script>
+</body>
+
+</html>

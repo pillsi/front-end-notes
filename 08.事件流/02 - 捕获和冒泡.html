@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .father{
+        width: 500px;
+        height: 500px;
+        background-color: pink;
+    }
+    .son{
+        width: 300px;
+        height: 300px;
+        background-color: purple;
+    }
+</style>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <button>点击了</button>
+    <script>
+        // 事件执行所包含的顺序：document, html, body, element
+        // 捕获：父到子
+        // 冒泡：子到父（多用）
+
+        // ⭐️冒泡事件：
+        // 当一个元素被触发后，跟其同名（'click') 的所有祖先都会被从小到大触发
+        const father = document.querySelector('.father')
+        const son = document.querySelector('.son')
+
+        father.addEventListener('click', function(){
+            alert('我是爸爸')
+        })
+
+        son.addEventListener('click', function(e){ //事件对象
+            alert('我是儿子')
+            e.stopPropagation(); //调用阻止传播的方法，这样爸爸就不会被调用了
+        })
+
+        // 如果我只想son事件被触发，father事件不要被调动，应该怎么办？
+        // ⭐️语法：事件对象.stopPropogation
+
+        // 📕事件解绑：事件不执行，了解即可
+        const btn = document.querySelector('.button')
+
+        //L2的写法需要函数名，所以这里的事件把匿名函数调出来
+        function fn(){
+            alert("点击了")
+        }
+        btn.addEventListener('click', fn) //调用匿名函数不需要小括号
+        btn.removeEventListener('click', fn)
+
+
+    </script>
+</body>
+</html>

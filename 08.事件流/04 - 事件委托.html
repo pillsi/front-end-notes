@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div:active{
+        background-image: url("../images/food01.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 300px
+    }
+
+</style>
+
+<body>
+    <ul>
+        <li>第1个孩子</li>
+        <li>第2个孩子</li>
+        <li>第3个孩子</li>
+        <li>第4个孩子</li>
+        <li>第5个孩子</li>
+
+        <p>我不想被变色</p>
+    </ul>
+
+    <div>
+        <p>土星</p>
+        <p>火星</p>
+        <p>木星</p>
+    </div>
+
+
+    <script>
+        // 📕事件委托的原理：
+        // 全班同学的20个快递，如果统一代理给班长来收，就不需要分别取20次，便可以送到每个同学手上
+        // 比如点击事件：有一个ul和下面的5个li，如果不想跟5个li循环注册事件，只需要给他们的父级ul注册即可
+        // ⭐️利用的是事件冒泡的原理，从小到大执行
+        // ⭐️好处是减少注册次数，优化性能
+
+        // 1. 先绑定父级
+        // const ul = document.querySelector('ul')
+        // // 2. 增加点击事件,li就会伴随ul被执行
+        // // ul.addEventListener('click', function(){
+        //     // ul.style.color = 'red' //但此时执行的是所有的li，如何改成每个li被触发？
+        //     // 📕⭐️事件委托的调用：事件对象.target, targetName
+        //     ul.addEventListener('click', function(e){
+        //         ul.addEventListener('click', function(e){
+        //     //如果ul标签里面有个p，不想p也点击变色，应该怎么做？ 
+        //     // li在e.target里面的tagName的属性名为LI，p为P，所以只要判断后就可以
+        //     if(e.target.tagName === 'LI'){
+        //         e.target.style.color = 'red'
+        //     }
+        // })            
+        // })
+
+        const ul = document.querySelector('ul')
+        ul.addEventListener('mouseenter', function(e){
+            e.target.tagName === 'LI' ? e.target.style.color = 'red' : ""
+        })
+
+        const div = document.querySelector('div')
+        div.addEventListener('mouseenter', function(e){
+            e.target.classList.add('active')
+            console.log(22);
+            // div.focus();
+        })
+        
+
+    </script>
+</body>
+</html>

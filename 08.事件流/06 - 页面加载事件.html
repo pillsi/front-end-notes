@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 古早版本喜欢把JS写在head中间，但是这样必须用windows+load事件
+        // 等页面所有元素都加载完毕后，再回来找回调函数
+        window.addEventListener('load',function(){
+            const btn = document.querySelector('button')
+            btn.addEventListener('click',function(){
+                alert("clicked")
+            })
+        })
+
+        // 也可以绑定特定的DOM资源加载后，再加载其他元素
+        img.addEventListener('load',function(){
+            // 等待图片加载完毕，再执行别的代码
+        })
+
+        // load是给整个window监听的
+        // DomContentLoaded是给document监听的
+    </script>
+</head>
+<body>
+    <button>click</button>
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding-top: 100px;
+      height: 3000px;
+    }
+
+    div {
+      display: none;
+      margin: 100px;
+      width: 200px;
+      height: 200px;
+      background-color: brown;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div>点击回到顶部</div>
+  <script>
+    // 📕scroll
+    const div = document.querySelector('div')
+    // 页面滚动事件
+    window.addEventListener('scroll', function () {
+      // console.log('我滚了')
+      // 我想知道页面到底滚动了多少像素， 被卷去了多少  scrollTop
+      // 获取html元素写法  
+      // document.documentElement  
+      // console.log(document.documentElement.scrollTop)
+      const n = document.documentElement.scrollTop
+      if (n >= 200) {
+        div.style.display = 'block'
+      } else {
+        div.style.display = 'none'
+      }
+    })
+
+    div.addEventListener('click',function(){
+        document.documentElement.scrollTop = 0;
+        // 可以改成window.scrollTo(x,y)
+    })
+    // const div = document.querySelector('div')
+    // div.addEventListener('scroll', function () {
+    //   // console.log(111)
+    //   // scrollTop 被卷去的头部
+    //   console.log(div.scrollTop)
+
+    // 📕resize
+    // 会在窗口尺寸改变的时候触发事件:
+    window.addEventListener('resize', function(){
+      // 执行的函数
+    })
+
+    // 📕clientWidth, clientHeight: 检测元素大小, 不包含border（有时盒子不写宽高，就需要js帮忙测量）
+    console.log(元素.clientWidth);
+
+    // ⭐️📕 offsetHeight, offsetWidth 也是检测元素大小，包含border
+    // ⭐️📕 offsetTop, offsetleft 检测元素和已定位的父级的距离，如果没有定位的父级，就是到document：注意只是可读属性
+    // 例子：比如在鼠标滚到到第二个大盒子对齐的水平线那，就出现电梯
+    const box = document.querySelector('div')
+    window.documentElement('scroll', function(){
+      const n = document.documentElement.scrollTop
+      elevator.style.opacity = n >= box.offsetTop ? 1 : 0
+    })
+
+
+
+    // })
+  </script>
+</body>
+
+</html>

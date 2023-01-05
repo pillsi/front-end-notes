@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://www.google.com"></form>
+    <input type="submit" value="register">
+    <script>
+        // 跟阻止冒泡很像，但这个是阻止默认的action
+        // 使用场景：比如注册时，要按要求填写完才能提交按钮
+        // 语法：e.preventDefault()
+        const form = document.querySelector('form')
+        form.addEventListener('click',function(e){
+            e.preventDefault(); 
+        })
+        
+    </script>
+</body>
+</html>

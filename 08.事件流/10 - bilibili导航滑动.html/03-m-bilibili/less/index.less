@@ -1,0 +1,103 @@
+@import 'base';
+@vw: 3.75vw;
+@color: #fb7299;
+
+// 头部 固定
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; //也可以写作 width: 100vw
+    height: ( 84 / @vw);
+    // background-color: pink;
+
+    .top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: (44 / @vw);
+        // background-color: aqua;
+        padding-left: (18/ @vw);
+        padding-right: (12/ @vw);
+
+        .left{
+            .iconfont{
+                font-size: ( 28 / @vw);
+                color: #fb7299;
+            }
+        }
+
+        .right{
+            display: flex;
+            .iconfont{
+                font-size: (24 / @vw);
+                color: #ccc;
+            }
+            a{
+                height: (24 / @vw);
+                margin-left: (24 / @vw);
+            }
+        }
+    }
+
+    .bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: (40 / @vw);
+        border-bottom: 1px solid #eee;
+
+        .tab{
+            ul{
+            display: flex;
+            li{
+                padding: 0 (16 / @vw);
+                
+                a{
+                    display: block;
+                    height: (38 / @vw);
+                    line-height: (38 / @vw);;
+                    font-size: (14 / @vw);
+                    &.current{
+                        color: #fb7299;
+                        border-bottom: 1px solid @color;
+                    }
+                }
+            }
+            }
+        }
+
+        .more{
+            a{  
+            display: block;
+            line-height: (40 / @vw);
+            width: (40 / @vw);
+            font-size: (22 / @vw);
+            // background-color: #fb7299;
+            text-align: center;
+            color: #ccc;
+
+            i{
+                font-size: (22 / @vw);
+            }
+        }
+        }
+    }
+}   
+
+// 视频
+.video_content{
+    padding: (84 / @vw) (5 / @vw);
+    .video_list{
+        display: flex;
+        a{
+        width: 50%;
+        padding: (8 / @vw) (5 / @vw);
+        font-size: (12/ @vw);
+        
+        .txt{
+            margin-top: (5 / @vw);
+        }
+        }
+    }
+}

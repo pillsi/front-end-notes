@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        .aside {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .item {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: red;
+            color: #fff;
+        }
+
+        .content {
+            width: 660px;
+            margin: 400px auto;
+        }
+
+        .neirong {
+            height: 300px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .content1 {
+            background-color: red;
+        }
+
+        .content2 {
+            background-color: blue;
+        }
+
+        .content3 {
+            background-color: orange;
+        }
+
+        .content4 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="aside">
+        <div class="item active" data-name="clothes">男装/女装</div>
+        <div class="item" data-name="kids">儿童服装/游乐园</div>
+        <div class="item" data-name="elec">电子产品</div>
+        <div class="item" data-name="movie">电影/美食</div>
+    </div>
+
+    <div class="content">
+        <div class="neirong clothes">男装/女装</div>
+        <div class="neirong kids">儿童服装/游乐园</div>
+        <div class="neirong elec">电子产品</div>
+        <div class="neirong moive">电影/美食</div>
+    </div>
+
+    <script>
+
+        const aside = document.querySelector('.aside')
+        const content1 = document.querySelector('.content .content1')
+
+
+        aside.addEventListener('click', function(e){
+            // console.log(e.target.dataset);
+            // console.log(e.target.tagName);
+            if(e.target.tagName === 'DIV'){
+                document.querySelector('.aside .active').classList.remove('active')
+                e.target.classList.add('active')
+                document.documentElement.scrollTop = content1.offsetTop 
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

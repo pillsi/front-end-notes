@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input[value]{
+        color: red; /*只有第二个input会被选到*/
+    }
+    input[type=text]{
+        color: purple; /*第一个input会被选到*/
+    }
+    
+</style>
+<body>
+    <input type="text">
+    <input type="password" >
+    <input type="submit" value="123" data-id="0">
+    <script>
+        const input = document.querySelector('input[value]')
+        console.log(input.dataset.id); //dataset是自定义属性的集合
+        input.style.color="pink"
+
+        // 为什么用自定义属性比用i序列号科学？
+        // 因为两个盒子要对应的情况下，如果大盒子穿插了一个新的内容，序列号就会更改，顺序就会打乱
+        // 所以用自定义名称一一对应，是最科学的
+    </script>
+
+</body>
+</html>

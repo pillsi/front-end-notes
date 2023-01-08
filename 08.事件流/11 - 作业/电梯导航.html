@@ -86,7 +86,8 @@
     <script>
 
         const aside = document.querySelector('.aside')
-        const content1 = document.querySelector('.content .content1')
+        i++
+        const content1 = document.querySelector(`.content:nth-child(${i+1})`)
 
 
         aside.addEventListener('click', function(e){

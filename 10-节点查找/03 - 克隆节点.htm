@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 克隆一个已有元素的节点
+        // 元素.cloneNode（boolean)
+        // true: 连同后代一起克隆
+        // false: 不包含后代节点（默认
+        const ul = document.querySelector('ul')
+        // 克隆
+        ul.children[0].cloneNode(true)
+        // 追加
+        ul.appendChild(ul.children[0].cloneNode(true))
+    </script>
+</body>
+</html>

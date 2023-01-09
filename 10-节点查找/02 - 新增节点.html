@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<ul>
+    <li>我是老大</li>
+</ul>
+<body>
+    <script>
+        //1. 新创建节点 
+        document.createElement
+        const div = document.createElement('div') //div是标签名
+        //2. 把新的节点插入父元素的最后一个子元素
+        document.body.appendChild(div) //把div节点加入到了body里面
+
+        // 例题：appendchild插入元素后面
+        const ul = document.querySelector('ul')
+        const li = document.createElement('li')  
+        li.innerHTML = '我是老二'
+        ul.appendChild(li)
+        
+        // insertBefore插入元素前面
+        ul.insertBefore(li, ul.children[0]) //在第1个孩子的前面
+        
+        </script>
+</body>
+</html>

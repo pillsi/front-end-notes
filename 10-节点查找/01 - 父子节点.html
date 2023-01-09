@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        const son = document.querySelector('.son')
+        // 可以不用每次都获取
+        
+        // 所有的元素，让它自动查找
+        console.log(son);
+        // 要拿最近一级的父节点：
+        console.log(son.parentNode);
+        // 爷爷级节点
+        console.log(son.parentNode.parentNode);
+
+        // 应用场景：比如一次关掉多个广告
+        // 待更新
+
+        // 获取子节点
+        const ul = document.querySelector('ul')
+        console.log(ul.childer); //得到伪数组，只能选亲儿子
+
+        // 获取兄弟节点
+        li.previousElementSibling //上一个li
+        li.nextElementSibling //下一个ii
+    </script>
+</body>
+</html>

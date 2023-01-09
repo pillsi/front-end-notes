@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 300px;
+        height: 50px;
+        background-color: palevioletred;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+</style>
+<body>
+    <div></div>
+    <script>
+
+        // 当前时间
+        const currentDate = new Date();
+        console.log(currentDate);
+
+        // 指定时间:计算时间，倒计时会用
+        const date = new Date('2022-2-23 02:23:23')
+        console.log(date);
+
+        // 日期对象，使用里面的方法
+        const getDate = new Date();
+        console.log(getDate.getFullYear());
+        console.log(getDate.getMonth()+1); //月份从0开始算 ~11
+        console.log(getDate.getDay()); //星期天从0开始算 ~6
+        console.log(getDate.getDate());
+        console.log(getDate.getHours()-12); //转换成12小时制就-12
+
+        // 📕例题1：打印出2022-2-23 02:23
+        const div = document.querySelector('div')        
+
+        function getMyDate(){
+            const date = new Date();
+
+            let h = date.getHours();
+            h < 10 ? h = '0' + h : h
+            let m = date.getMinutes()
+            m < 10 ? m = '0' + m : m
+            let s = date.getSeconds()
+            s < 10 ? s = '0' + s : s
+            
+            return(`${date.getFullYear()} ${date.getMonth()+1}-${date.getDate()} ${h}:${m}:${s}`)
+        }
+
+        div.innerHTML = getMyDate() 
+        //留下这个的原因，是因为下面setInterval是有个1秒间隔刷新，但只要这个回调函数一直在被调用，就不会有1秒的间隔
+
+        // 时间流动
+        setInterval(function(){
+            div.innerHTML = getMyDate()
+        },1000)
+    </script>
+</body>
+</html>

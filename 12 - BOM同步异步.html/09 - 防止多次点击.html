@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    1. 写完点击的函数后，在外面套一层flag = true 的变量当节流阀
+    2. 在执行倒计时第一层时，flag = false，这样倒计时过程就不能点击
+    3. setInterval完成后，再把flag = true，这样倒计时完后就可以继续点击开始倒计时
+</body>
+</html>

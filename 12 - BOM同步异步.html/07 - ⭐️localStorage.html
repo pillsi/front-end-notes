@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    概念：放在浏览器里面的小仓库，关闭页面数据也不丢失
+    sessionStorage和localStorage大小大概各5M
+    sessionStorage的区别就是关浏览器就没了
+    只能存string
+    <script>
+        // 语法：
+        // localStorage.setItem(key(属性名),value(属性值))
+
+        // 存数据：
+        localStorage.setItem('uname', 'pink')
+        // 在application-local storage里面能储存
+
+        // 取数据：
+        console.log(localStorage.getItem('uname'));
+
+        // 删除名字：//必须手动删除，或者在界面里面用clear all的按钮
+        localStorage.removeItem('uname')
+
+        // 改数据
+        localStorage.setItem('red')
+
+        // 存储复杂数据类型，一次存多个值
+        let obj = {
+            uname:'pink',
+            age:18,
+            sex:famale
+        }
+        localStorage.setItem('obj', obj)
+        localStorage.getItem('obj') //对象获取不到，因为要转换成字符串类型
+        // 解决办法：
+        // ⭐️JSON.stringify()
+        localStorage.setItem('obj', JSON.stringify(obj)) //就把对象改成字符串了
+        // JSON对象的特点：属性和值都有引号，而且是双引号
+
+        // 跟stringify相反的，把字符串转回为对象，因为不能让它丢失
+        localStorage.setItem('obj', JSON.parse(obj))
+
+
+    </script>
+</body>
+</html>

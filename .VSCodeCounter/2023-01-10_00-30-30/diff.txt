@@ -1,0 +1,71 @@
+Date : 2023-01-10 00:30:30
+Directory : /Users/haley/front-end-notes
+Total : 34 files,  30553 codes, 1490 comments, 2684 blanks, all 34727 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |          6 |     28,957 |      1,420 |      2,553 |     32,930 |
+| HTML       |         25 |      1,028 |         27 |        125 |      1,180 |
+| CSS        |          3 |        568 |         43 |          6 |        617 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                        | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                           |         34 |     30,553 |      1,490 |      2,684 |     34,727 |
+| 08.事件流                                                                      |          4 |        257 |          0 |         47 |        304 |
+| 08.事件流 (Files)                                                              |          2 |        117 |          0 |         13 |        130 |
+| 08.事件流/11 - 作业                                                              |          2 |        140 |          0 |         34 |        174 |
+| 09 - 时间事件                                                                   |          3 |        113 |          0 |         16 |        129 |
+| 10-节点查找                                                                     |          6 |        155 |          0 |         15 |        170 |
+| 11 - 移动端事件                                                                  |         13 |     29,834 |      1,490 |      2,588 |     33,912 |
+| 11 - 移动端事件 (Files)                                                          |          4 |        309 |         27 |         29 |        365 |
+| 11 - 移动端事件/css                                                              |          2 |        500 |         43 |          3 |        546 |
+| 11 - 移动端事件/css-学生信息                                                         |          1 |         68 |          0 |          3 |         71 |
+| 11 - 移动端事件/js                                                               |          6 |     28,957 |      1,420 |      2,553 |     32,930 |
+| 12 - BOM同步异步.html                                                           |          8 |        194 |          0 |         18 |        212 |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                    | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/haley/front-end-notes/08.事件流/01 - ⭐️全选案例 copy.html                   | HTML       |         87 |          0 |         10 |         97 |
+| /Users/haley/front-end-notes/08.事件流/11 - CSS伪类选择器.html                      | HTML       |         30 |          0 |          3 |         33 |
+| /Users/haley/front-end-notes/08.事件流/11 - 作业/电梯导航.html                       | HTML       |         85 |          0 |         23 |        108 |
+| /Users/haley/front-end-notes/08.事件流/11 - 作业/购物车加减.html                      | HTML       |         55 |          0 |         11 |         66 |
+| /Users/haley/front-end-notes/09 - 时间事件/01 - 实例化日期.html                      | HTML       |         56 |          0 |          9 |         65 |
+| /Users/haley/front-end-notes/09 - 时间事件/02 - 时间的简写.html                      | HTML       |         41 |          0 |          7 |         48 |
+| /Users/haley/front-end-notes/09 - 时间事件/03 - 时间戳(倒计时).html                   | HTML       |         16 |          0 |          0 |         16 |
+| /Users/haley/front-end-notes/10-节点查找/01 - 父子节点.html                         | HTML       |         37 |          0 |          5 |         42 |
+| /Users/haley/front-end-notes/10-节点查找/02 - ⭐️新增节点.html                       | HTML       |         28 |          0 |          3 |         31 |
+| /Users/haley/front-end-notes/10-节点查找/02 - 新增节点.html                         | HTML       |         30 |          0 |          4 |         34 |
+| /Users/haley/front-end-notes/10-节点查找/03 - 克隆节点.htm                          | HTML       |         27 |          0 |          0 |         27 |
+| /Users/haley/front-end-notes/10-节点查找/04 - 删除节点.html                         | HTML       |         20 |          0 |          0 |         20 |
+| /Users/haley/front-end-notes/10-节点查找/05 - 重绘repaint&回流reflow.html           | HTML       |         13 |          0 |          3 |         16 |
+| /Users/haley/front-end-notes/11 - 移动端事件/01 - 移动端基础事件.html                   | HTML       |         27 |          0 |          0 |         27 |
+| /Users/haley/front-end-notes/11 - 移动端事件/02 - swiper插件.html                  | HTML       |        105 |          1 |         11 |        117 |
+| /Users/haley/front-end-notes/11 - 移动端事件/03 - 录入学生信息 copy.html               | HTML       |         49 |         13 |          6 |         68 |
+| /Users/haley/front-end-notes/11 - 移动端事件/03 - 录入学生信息.html                    | HTML       |        128 |         13 |         12 |        153 |
+| /Users/haley/front-end-notes/11 - 移动端事件/css-学生信息/index.css                  | CSS        |         68 |          0 |          3 |         71 |
+| /Users/haley/front-end-notes/11 - 移动端事件/css/swiper.css                      | CSS        |        499 |         32 |          2 |        533 |
+| /Users/haley/front-end-notes/11 - 移动端事件/css/swiper.min.css                  | CSS        |          1 |         11 |          1 |         13 |
+| /Users/haley/front-end-notes/11 - 移动端事件/js/swiper.esm.browser.bundle.js     | JavaScript |      7,573 |        379 |        639 |      8,591 |
+| /Users/haley/front-end-notes/11 - 移动端事件/js/swiper.esm.browser.bundle.min.js | JavaScript |          1 |         12 |          1 |         14 |
+| /Users/haley/front-end-notes/11 - 移动端事件/js/swiper.esm.bundle.js             | JavaScript |      6,828 |        319 |        616 |      7,763 |
+| /Users/haley/front-end-notes/11 - 移动端事件/js/swiper.esm.js                    | JavaScript |      6,809 |        319 |        617 |      7,745 |
+| /Users/haley/front-end-notes/11 - 移动端事件/js/swiper.js                        | JavaScript |      7,745 |        379 |        679 |      8,803 |
+| /Users/haley/front-end-notes/11 - 移动端事件/js/swiper.min.js                    | JavaScript |          1 |         12 |          1 |         14 |
+| /Users/haley/front-end-notes/12 - BOM同步异步.html/01 - BOM.html                | HTML       |         13 |          0 |          0 |         13 |
+| /Users/haley/front-end-notes/12 - BOM同步异步.html/02 - setTimeout.html         | HTML       |         22 |          0 |          1 |         23 |
+| /Users/haley/front-end-notes/12 - BOM同步异步.html/03 - 同步和异步.html              | HTML       |         32 |          0 |          3 |         35 |
+| /Users/haley/front-end-notes/12 - BOM同步异步.html/04 - location.html           | HTML       |         27 |          0 |          2 |         29 |
+| /Users/haley/front-end-notes/12 - BOM同步异步.html/05 - navigator.html          | HTML       |         16 |          0 |          0 |         16 |
+| /Users/haley/front-end-notes/12 - BOM同步异步.html/06 - history.html            | HTML       |         17 |          0 |          0 |         17 |
+| /Users/haley/front-end-notes/12 - BOM同步异步.html/07 - ⭐️localStorage.html     | HTML       |         42 |          0 |          8 |         50 |
+| /Users/haley/front-end-notes/12 - BOM同步异步.html/08 - map, joint.html         | HTML       |         25 |          0 |          4 |         29 |
+| Total                                                                       |            |     30,553 |      1,490 |      2,684 |     34,727 |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+

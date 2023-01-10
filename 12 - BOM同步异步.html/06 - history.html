@@ -7,14 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        <li>没用了</li>
-    </ul>
     <script>
-        // 语法：元素.removeChild(父元素的第几个孩子)
-        // 必须有亲父子关系才能删除
-        const ul = document.querySelector('ul')
-        ul.removeChild(ul.children[0])
+        history.back() //后退一步
+        history.go(-1)
+        history.forward() //前进一步
+        history.go(1)
     </script>
 </body>
 </html>

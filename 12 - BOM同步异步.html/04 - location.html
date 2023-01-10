@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="username"> 一定要写name
+    <a href="#/my"></a>
+    <a href="#/friend"></a>
+    <a href="#/download"></a>
+    <script>
+        // location主要是跳转页面用
+        console.log(location);
+        location.href = "http://www.google.com" //自动跳转到谷歌了
+
+        // location的几个属性
+        location.search //拆分保存了URL地址的携带的参数，？后面的
+        location.hash //页面不需要跳转，但是可以加载不同的components，#井号后面的
+        location.reload() //点击一个按钮，直接刷新页面
+
+        btn.addEventListener('click', function(){
+            location.reload(true) //加了true就是强制刷新
+        })
+    </script>
+</body>
+</html>

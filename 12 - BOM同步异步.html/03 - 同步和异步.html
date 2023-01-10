@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    概念: JS的默认执行机制是单线程的（但浏览器是多线程的）, 必须完成一个任务才能做下一个
+    就像在车流里面, 如果你的车坏了, 就要把它放在应急车道, 不能耽误主车道。这是异步
+    但是你的车总会有修好的时候, 等主车流都走了后, 就开始处理应急车道的任务
+    ⭐️主线程不断获取任务, 执行任务, 再获取, 再执行的过程, 就叫event loop
+    
+    同步: 执行顺序和排列顺序一直
+    做法: 要做饭, 必须先烧水, 等10分钟水开了, 再去切菜炒菜
+
+    异步: 可以设定优先的执行顺序
+    做法: 要做饭, 先烧水, 烧水的10分钟里, 把切菜炒菜同时做了
+
+    JS的异步是通过回调函数实现的, 一般而言, 异步有三个类型：
+    1. click, resize(不知道用户什么时候点击)
+    2. load, error（资源加载
+    3. setInterval, setTimeout（0秒也是异步
+    就需要把上面3个异步任务添加到waiting list中
+    <script>
+        console.log("111"); //同步任务
+        console.log(function(){
+            console.log("222")
+        },1000); //异步任务
+        console.log("333"); //同步任务
+        // 执行顺序：111,333,222
+    </script>
+</body>
+</html>

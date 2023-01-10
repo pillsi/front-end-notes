@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 箭头函数的意义是取代匿名函数更简洁，基本的函数不能代替
+
+        // 普通函数：
+        const fn = function (){
+            console.log(123);
+        }
+        fn();
+
+        // 箭头函数：
+        const fn1 = () => { //省掉了function单词，（）内依然是行参
+            console.log(123);
+        }
+        fn1();
+
+        const fn2 = (x) => {
+            console.log(x);
+        }
+        fn2(1) //1
+
+    </script>
+</body>
+</html>

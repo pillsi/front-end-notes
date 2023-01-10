@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    作用域:scope
+    就近原则就是其中的一种
+    概念：可以被访问的一个范围，就像一个学校的不同教室
+    <script>
+        // 📕局部作用域，全局作用域
+
+        // 局部：
+        // 1. 函数作用域:
+        // a. 只能在内部声明，外部不能访问
+        // b. 内部参数也是局部变量
+        // c. 执行完毕后函数变量就被清空了
+
+        // 2.块级作用域：
+        // a.大括号里的内容：for循环..., if条件
+        // b.外部不能访问内部声明，但是var声明的可以
+
+        // 📕全局作用域
+        // 写在<script>标签里面的
+
+        // 📕作用域链：函数套函数，就近原则查找
+        // 从下往上一层层找，直到子找不到父（global）
+        // 子可以访问父，但是父级无法访问子级
+    
+
+        // 📕垃圾回收机制：JS垃圾回收机制的执行过程：为闭包做铺垫
+        // Garbage Collection: 自动回收不使用的内存
+        // 如果不使用垃圾回收机制，很容易造成内存泄漏（⭐️memory leak：指的是内存一直无法被释放
+
+        // 📕内存的生命周期
+        // 过程：内存分配（给变量名），内存使用（函数内部），内存回收（执行完毕后）
+        // 尽量少使用全局变量,因为只有关闭页面才会回收
+        // 局部变量在不使用了就会被回收
+
+        let num = 10; //全局，关闭页面才会回收
+        function fn(){
+            const num = 10
+            console.log(num);
+        }
+        fn(); //局部，调用完就回收
+
+        // 📕⭐️闭包
+        // 闭包 = 内层函数 + 外层函数的变量
+        // 光函数嵌套函数不行，必须要内层函数调用外层变量
+        function outer(){
+            const a = 1;
+            function fn2(){
+                console.log(a); //里面的函数用到了外层函数的变量 a = 1，这就是闭包
+            }
+            outer()
+        }
+        fn()
+
+        // 📕闭包的使用
+        // 一般外部函数不能方位内部变量，但闭包可以
+        function outer(){
+            const a = 1;
+            function fn2(){
+                console.log(a); 
+            }
+            return fn2 //调用改为返回
+        }
+        // outer() === fn === function fn2(){}
+        // const fun = function fn2(){}
+        const fun = outer()
+        fun() //调用函数
+
+        // 用闭包把函数改为私有化
+        // 普通形式：统计函数被调用的次数
+        let i = 0;
+        function fn(){
+            i++
+            console.log(`函数被调用了${i}次`);
+        }
+        fn()
+        // 这样的问题在于，因为i是全局变量，大家都能用，如果后面i=1000，那被调用的次数就变成1001,1002...
+
+        //⭐️用闭包的形式来解决：
+        function fn3(){ //函数套函数，并且局部外有变量
+            const i = 0; //i不能被修改
+            function fn4(){
+                i++
+                console.log(`函数被调用了${i}次`);
+            }
+            return fn4() //返回不调用
+        }
+        const result = fun()
+        result() //2
+        result() //3
+
+        // 闭包的问题：两套函数一直在调用，并且有全局变量，不关闭页面就无法回收垃圾，造成memory leak
+
+        // 📕变量提升：是比较奇怪的现象，先访问再声明
+        // 概念：把var的声明变量提升到作用域的最前面，但是只声明，不赋值
+        
+        var number
+        console.log(number+'个'); // undifinded, 因为没有赋值
+        number = 10 //之前是var number = 10，变量提升就提到最前面了
+
+        // 推荐先声明再调用
+
+        // 📕函数提升：先调用再声明，把所有函数声明提升到当前作用域的最前面
+        fn()
+        function fn(){
+            console.log('函数提升'); //写在哪个位置没事，因为可以随时调用
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

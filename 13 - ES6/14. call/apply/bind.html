@@ -22,7 +22,7 @@
         // 2.改变this指向
         fn.call(obj,1,2) //改变this指向从window到obj 
 
-        // call用得比较少
+        // call用得比较少，应用场景是传递参数
 
         // apply
         fun.apply(thisArg, [arr]) //跟call的区别：第二个参数必须是数组
@@ -35,10 +35,10 @@
         fn.apply(obj2) //this就改变指向obj2
         // 应用场景：因为跟数组有关，所以可以用Maeh.max()球数组最大值
         
-        // 第三个改变this指向：bind
+        // ⭐️第三个改变this指向：bind
         // 跟前俩的区别：不会调用函数, 直接把原来的this改变了
         // fun.call(thisArg, arg1, arg2,...)
-
+        // 应用场景是改变定时器内部的this指向
 
     </script>
 </body>

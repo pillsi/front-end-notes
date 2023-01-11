@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    三者作用：改变this指向
+    call:使用call方法调函数，同事指定被调用函数中的this值
+    fun.call(thisArg, Arg1, Arg2...)
+    
+    <script>
+        const obj = {
+            uname:'red'
+        }
+        function fn(x,y){ //x=1,y=2
+            console.log(this); //window
+        }
+        // 1.调用函数
+        // 2.改变this指向
+        fn.call(obj,1,2) //改变this指向从window到obj 
+
+        // call用得比较少
+
+        // apply
+        fun.apply(thisArg, [arr]) //跟call的区别：第二个参数必须是数组
+        const obj2 = {
+            age:18
+        }
+        function fn(){
+            console.log(this); //window
+        }
+        fn.apply(obj2) //this就改变指向obj2
+        // 应用场景：因为跟数组有关，所以可以用Maeh.max()球数组最大值
+        
+        // 第三个改变this指向：bind
+        // 跟前俩的区别：不会调用函数, 直接把原来的this改变了
+        // fun.call(thisArg, arg1, arg2,...)
+
+
+    </script>
+</body>
+</html>

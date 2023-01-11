@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    在构造函数（父）的实例对象, 可以指向原型prototype.constructor（大儿子），也可以指向实例对象._proto_.constructor，(小儿子），两个儿子之间可以共享属性和方法
+
+    <script>
+        function star(){}
+        const biber = new Star()
+        // 原型对象_proto_指向 构造函数的原型对象
+    console.log(biber._proto_); //原型对象里面都有constructor === Star.prototype
+
+    // 📕原型继承
+        // 继续抽取   公共的部分放到原型上
+    // const Person1 = {
+    //   eyes: 2,
+    //   head: 1
+    // }
+    // const Person2 = {
+    //   eyes: 2,
+    //   head: 1
+    // }
+    // 构造函数  new 出来的对象 结构一样，但是对象不一样
+    function Person() {
+      this.eyes = 2
+      this.head = 1
+    }
+    // console.log(new Person)
+    // 女人  构造函数   继承  想要 继承 Person
+    function Woman() {
+
+    }
+    // Woman 通过原型来继承 Person
+    // 父构造函数（父类）   子构造函数（子类）
+    // 子类的原型 =  new 父类  
+    Woman.prototype = new Person()   // {eyes: 2, head: 1} 
+    // 指回原来的构造函数
+    Woman.prototype.constructor = Woman
+
+    // 给女人添加一个方法  生孩子
+    Woman.prototype.baby = function () {
+      console.log('宝贝')
+    }
+    const red = new Woman()
+    console.log(red)
+    // console.log(Woman.prototype)
+    // 男人 构造函数  继承  想要 继承 Person
+    function Man() {
+
+    }
+    // 通过 原型继承 Person
+    Man.prototype = new Person()
+    Man.prototype.constructor = Man
+    const pink = new Man()
+    console.log(pink)
+
+    // 📕原型链
+    // 每个对象里面都有_proto_对象原型，它会一条一条向上找，就像冒泡，从小到大，只不过有一条chain把它们连起来
+    // 最上面一级是object原型对象
+
+    作用: 如果上一层的array有map,就可以通过array.prototype.map来查找到并使用map方法
+    // instanceof: 查找当前的对象在不在某个对象的原型链上
+    const lhd = new Person()
+    console.log(ldh instanceof Object); //true
+
+
+    </script>
+</body>
+</html>

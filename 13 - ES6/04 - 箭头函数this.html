@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sayHi = function(){
+            console.log(this); //普通函数指向调用者，此处为window
+        }
+        btn.addEventListener('click', function(){
+            console.log(this); //此处指向btn
+        })
+
+        // 箭头函数不会创建自己的this,只会从自己的作用域链上一层沿用this
+        const fn = () => {
+            console.log(this);
+        }
+        fn() //指向window，因为它的上一层script指向的window，不是因为它的window被调用
+
+        // 对象方法箭头函数 this
+        const obj = {
+            uname: 'pink老师',
+            sayHi: ()=> { //把箭头看成function
+                console.log(this); //this指向window, 因为这个函数里没有this，所以从obj的上层window去找
+            }
+        }
+        obj.sayHi()
+
+        // 例子2
+        const obj2 = {
+            uname: 'red',
+            sayYes: () => {
+                console.log(this); //这里的this指向的是obj2
+                let i = 0;
+                const count = () => {
+                    console.log(this); //这里this指向obj2，因为这里的this没有对象，往上爬，找到上一层的this调用的是obj2
+                }
+                count();
+            }
+        }
+            obj2.sayYes()
+            
+    </script>
+</body>
+</html>

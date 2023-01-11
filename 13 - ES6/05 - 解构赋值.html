@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    学会对对数组和对象的解构
+    <script>
+        // 数组解构：快速批量的给一批数组赋值给变量 
+        const arr = [10,30,20]
+        const [min, max, avg] = arr
+        console.log(min); //10
+        console.log(max); //30
+        console.log(avg); //20 
+
+        // 交换两个变量，不再需要temp
+        let a = 1
+        let b = 2; //必须加分号，不然系统会按2[b,a]连成一行来处理
+        [b, a] = [a, b]
+        console.log(a, b); //2, 1
+        
+        // 两种情况加分号：数组解构，立即执行函数
+
+        // 对象解构
+        // 普通对象：
+        const obj = {
+            uname: 'pink',
+            age: 18
+        }
+        console.log(obj.uname);
+
+        // 解构：
+        const {uname, age} = {uname:'pink', age:18} //属性名和对象名必须一致
+        console.log(uname);
+
+    </script>
+</body>
+</html>

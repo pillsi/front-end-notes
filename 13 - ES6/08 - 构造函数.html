@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 小猪佩奇一家的例子
+        // 他们属性都一样，可以封装成构造函数，用来初始化对象，创建多个类似的对象
+
+        // 不成文规定：
+        // 1. 命名以大写字母开头
+        // 2. 只能用new操作符来执行
+        // 3. 内部的return返回值无效，不要写return
+
+            // 创建一个猪 构造函数 
+    function Pig(uname, age) {
+      this.uname = uname
+      this.age = age
+    }
+
+    // console.log(new Pig('佩奇', 6))
+    // console.log(new Pig('乔治', 3))
+    const p = new Pig('佩奇', 6)
+    console.log(p)
+
+    //  const pepa = { uname: '佩奇', age: 6 }
+
+    // const obj = new Object()
+
+    </script>
+</body>
+</html>

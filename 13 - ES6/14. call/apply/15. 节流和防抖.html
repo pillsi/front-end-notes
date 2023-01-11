@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    节流：连续触发事件，但是n秒中只执行一次函数
+    比如等到上一个人做完核酸，整个动作完成了，第二个人才能排队跟上
+    <!-- 在1秒钟里，不管你点击按钮多少次，我只会执行一次 -->
+    如果不加节流，就会被无限次触发点击，消耗大量性能
+
+    防抖：debounce
+    如果n秒内又触发了事件，则会重新计算函数执行时间
+    比如要连续5年交社保，如果中途断了，则重新开始计算，那往后推5年才能买房
+
+    搜索框，输入的时候就可以查找，不用等输入完后
+    我们设定一个时间，比如300ms，当输入第一个字符的时候，300ms发送请求，但是在200ms的时候又输入一个字符，则需等300ms后发送请求
+</body>
+</html>

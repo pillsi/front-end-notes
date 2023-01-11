@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    求和器
+    <script>
+        // 不要用map，它只是每个元素加工
+        arr.reduce(function(){},起始值) //起始值可以省略，那就作为第一次累计的起始值
+        // 回调函数里面的参数：（累计值，当前元素[,索引号][，原数组]）
+        // 前两个必须写
+
+        const arr = [1,2,3]
+        arr.reduce(function(prev, item){
+            return prev+item //prev看成sum
+        },0) //如果起始值不写，那就默认为第一个元素的值，即是1，结果跟写0是一样的
+
+        arr.reduce((prev,item)=>prev+item)
+    </script>
+</body>
+</html>

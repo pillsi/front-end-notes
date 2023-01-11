@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 直接赋值的问题，就是会改变原对象的值
+        // 深浅拷贝不会影响原对象
+        const obj = {
+            name:'pink'
+        }
+        // 浅拷贝
+        const o = {...obj}
+        o.name = 'red'
+        console.log(o); //red
+        console.log(obj); //pink 不会被改变
+        // 但是浅拷贝的问题：只能拷贝单层的，不会互相影响，多层的就会被地址，值也会改变。所以只适合简单数据类型
+
+        // 深拷贝：拷贝对象，不是地址
+        // 如何实现：loadash/cloneDeep, JSON.stringfy(),递归
+        // 什么是递归函数？
+        let i = 1
+        function fn({i}){
+            if(i>6){ //加了条件就可以终止递归了
+                return
+            }
+            i++
+            fn() //自己调用自己
+        }
+        fn();
+        // 成了死递归了 stack overflow，解决办法必须加退出条件return
+
+        // 用lodash实现deep clone
+        // 下载和引用loadash库，调用一下它的函数
+        const  o = _.cloneDeep(obj) //深拷贝了obj，不影响原值
+
+        // json.stringfy() 把对象转换成json字符串
+        const j = console.log(JSON.stringify(obj));
+        // 字符串转换为对象
+        JSON.parse(JSON.stringify(j))
+
+
+    </script>
+</body>
+</html>

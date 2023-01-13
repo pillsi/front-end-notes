@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input1" type="text" value="">
+    <input id="input1" type="text" value="">
+    <button>提交</button>
+    <script>
+        const input1 = document.querySelector('#input1')
+        const input2 = document.querySelector('#input2')
+        const button = document.querySelector('button')
+        const value = document.querySelectorAll('input[value]')
+
+        button.addEventListener('click',function(){
+        if(input1.value.length < 8){
+            alert("请输入8位字符以上的密码")
+        }
+        if(input1.value !== input2.value){
+            alert("两次密码不相同，请重新输入")
+        }
+    })
+        
+    </script>
+</body>
+</html>

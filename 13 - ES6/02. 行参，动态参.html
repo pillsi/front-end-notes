@@ -11,25 +11,25 @@
         // 📕动态参数argument
         // arguments是动态参数，如果不知道要传几个实参时时用
         // argument是伪数组，只存在函数中
-        let sum = 0
-        function getSum(){
-            for (let i = 0; i <arguments.length; i++){
-                sum = sum + arguments[i]
-            }
-            return sum
-        }
-        console.log(getSum(1,1,1,1,1));  //不管实参传几个，都可以
+        // let sum = 0
+        // function getSum(){
+        //     for (let i = 0; i <arguments.length; i++){
+        //         sum = sum + arguments[i]
+        //     }
+        //     return sum
+        // }
+        // console.log(getSum(1,1,1,1,1));  //不管实参传几个，都可以
 
         // 📕剩余参数...arr，语法同上，提倡多用剩余
         // 真数组，可以用数组方法操作
-        function getSum(a,b,...arr){ //1给2,2给b，剩余的给...arr
+        function getSum(a,b,...arr){ //1给a,2给b，剩余的给...arr
             console.log(arr); //使用的时候不需要用...
         }
-        getSum(1,2,3)
+        getSum(1,2,3,5)
 
         // 📕...arr还是展开运算符
         const arr = [1,2,3,4,5] //把数组展开 ⭐️不会改变数组
-        // console.log(...arr);
+        console.log(...arr);
 
         // ⭐️实际用法：求最大值，因为数组没有求最大小值的方法
         console.log(Math.max(...arr)); //5

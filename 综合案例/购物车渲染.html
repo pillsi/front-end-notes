@@ -110,7 +110,7 @@
   </div>
 
   <div class="total">
-    <div>合计：<span class="amount">1000.00</span></div>
+    <div>合计：<span class="amount">{1000.00}</span></div>
   </div>
   <script>
     const goodsList = [
@@ -151,23 +151,35 @@
     
     document.querySelector('.list').innerHTML =
     goodsList.map(item=>{
-      const {name, price, picture, count, gift} = item
+      const {name, price, picture, count, gift, spec} = item
+      // console.log(Object.values(spec)); // 或者对象里面的字符串的值
+      const text = Object.values(spec).join("/") //join转换成字符串
 
-      // console.log(item);
+      // 渲染赠品：1.先把字符串转换为数组gift.split; 2.map数组，有几个赠品就渲染几个；3.把数组再转换为str渲染到页面；4. 判断有没有gift
+      const str = gift ? gift.split(",").map((item)=>`<span class="tag">【赠品】${item}</span>`).join(" ") : ""
 
       // toFixed(保留的小数位)
       // let num = 2.903
       // num.toFixed(2) // 2.90
+
+      // 单价小计模块
+      let subTotal = ((price * 100 * count) / 100).toFixed(2) //计价更精准
+
+      // 总计小模块
+      let total = goodsList.reduce((prev,item)=>prev+(item.price*item.count),0).toFixed(2)
+      // console.log(total);
+      document.querySelector('.amount').innerHTML = total
+
       return `
         <div class="item">
           <img src=${picture} alt="">
-          <p class="name">${name} <span class="tag">【赠品】10优惠券</span></p>
-          <p class="spec">白色/10寸</p>
+          <p class="name">${name} ${str} </p>
+          <p class="spec">${text}</p>
           <p class="price">${price.toFixed(2)}</p> 
           <p class="count">x${count}</p>
-          <p class="sub-total">579.80</p>
+          <p class="sub-total">${subTotal}</p>
         </div>
-      `
+       `
     })
     
     

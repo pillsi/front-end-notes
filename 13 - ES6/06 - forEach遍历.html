@@ -10,9 +10,12 @@
     forEach是for的加强版, 但是只遍历, 不返回
     <script>
         // 语法跟map一样，适合于遍历数组对象
-        element.map(function(item,index){
-            console.log(item);
-            console.log(index);
+
+        let arr = ['red', 'blue', 'yellow']
+
+        arr.map(function(item,index){
+            console.log(item); //数组元素 red, blue, yellow
+            console.log(index); //索引号 0, 1, 2
         })
     </script>
 </body>

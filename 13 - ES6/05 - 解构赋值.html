@@ -8,6 +8,7 @@
 </head>
 <body>
     学会对对数组和对象的解构
+    ⭐️ 数组解构：快速批量的给一批数组赋值给变量 
     <script>
         // 数组解构：快速批量的给一批数组赋值给变量 
         const arr = [10,30,20]
@@ -30,11 +31,65 @@
             uname: 'pink',
             age: 18
         }
-        console.log(obj.uname);
+        console.log(obj.uname); //'pink '
 
         // 解构：
         const {uname, age} = {uname:'pink', age:18} //属性名和对象名必须一致
-        console.log(uname);
+        console.log(uname); //'pink'
+
+        // 对象解构的变量名，可以重新改名。语法：旧变量名：新变量名
+        const {uname:username, age:yearofage} = {uname:'pink', age:18}
+        console.log(username, yearofage); //pink, 18
+
+        // 如果变量少，单元值多，可以用展开运算符
+        const [k, m, ...tel] = ["小米", "苹果", "三星", "Oppo"]
+        console.log(k);//小米
+        console.log(m);//苹果
+        console.log(tel); //['三星'，‘oppp'] 返回数组的形式
+
+        // 📕解构数组对象
+        const pig =[{hername:'佩奇',herage:5}]
+        const [{hername, herage}] = pig //佩奇，5
+
+        // 📒作业：
+        // 1. 完成对象解构并打印 const={name:"佩奇"， age:6}
+        const obj2 = {thename:"佩奇",theage:6}
+        console.log(obj2.thename);
+
+        // 2.将pig对象中的name，通过解构的方式换成thisname
+        const {thename:thisname, theage:thisage} = {thename:"佩奇",theage:6}
+        console.log(thisname);
+
+        // 3.请将数组元素，完成商品名和价格的解构
+        const goods = [
+            {
+                goodsName: "小米",
+                price:1999
+            }
+        ]
+        const {goodsName, price} = {goodsName:'小米', price:1999}
+        console.log(goodsName, price);
+        
+
+        // 📕多重对象解构
+        const newPig = {
+            name:'佩奇',
+            family:{
+                mother:'猪妈妈',
+                father:'猪爸爸',
+                brother:'乔治'
+            },
+            house:pink
+        }
+
+        const {name, family:{mother, father, brother}, house} = newPig //要告诉人家是哪个family
+
+        console.log(name);
+        console.log(faimly);
+        console.log(mother);
+        
+
+
 
     </script>
 </body>

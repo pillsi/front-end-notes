@@ -7,37 +7,197 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text">
-    <input type="text">
-    <button>提交</button>
     <script>
-        function areAnagram(str1,str2){
+        // 数组里每个元素+2
+        function addTwo(arr){
+            arr.map((item,index)=>{
+                arr[index] = item + 2
+            })
+            return arr
+        }
+        console.log(addTwo([1,1,1]));
+        console.log("--------");
 
-        let n1 = str1.length;
-        let n2 = str2.length;
 
-        if(n1!=n2){
-            return false;
+        // 数组求和
+        // function getSum(arr2){
+        //     arr2.reduce((ttl,current)=>{
+                
+        //     })
+        //     return 
+        // }    
+        // console.log(get([5,5,5]));
+        // console.log("--------");
+
+        // 求1~100之间所有的偶数和
+        
+        function getOdd(){
+            sum = 0;
+            for(let i=1; i<=100; i++){
+                if(i%2===0){
+                    sum = sum + i
+                }
+            }
+            return sum
+        }
+        console.log(getOdd());
+
+        console.log("--------");
+
+        // 📕题目2：找出元素为apple的下标，有则打印该下标，没有则打印-1
+        let re = -1
+         function findApple(arr5){
+            arr5.forEach((item,index) => {
+                item === "apple" ? re = index : ""
+            });
+            return re
+         }
+         console.log(findApple([10,90,88,"apple"]));
+        console.log("--------");
+
+        // 📕题目3：求数组元素的和[5, 8, 9, 2, 1, 5]
+        function getSum(arr4){
+            let sum = 0;
+            arr4.forEach(item => {
+                sum = sum + item
+            });
+            return sum
+        }
+        console.log(getSum([5,5,5]));
+        console.log("--------");
+
+         // 📕题目4：求出数组里大于10的和 [4, 9, 5, 20, 3, 11]
+         
+         let total = 0;
+         function bigTen(arr6){
+            arr6.forEach((item)=>{
+                item >=10 ? total = total + item : ""
+            })
+            return total
+         }
+         console.log(bigTen([4, 9, 5, 20, 3, 11]));
+         console.log("--------");
+
+        // 📕题目5：求出班级里同学们平均年龄[15, 19, 21, 33, 18, 24]
+        let sum2 = 0;
+        let avg = 0;
+        function getAvg(arr7){
+            arr7.forEach((item)=>{
+                sum2 = sum2 + item;
+                avg = parseInt(sum2/arr7.length);
+            })
+            return avg
         } 
-        str1.sort();
-        str2.sort()
+        console.log(getAvg([33,24,25,26,30]));
 
-        for (let i = 0; i < n1; i++)
-            if (str1[i] != str2[i])
-                return false;
+        console.log("--------");
 
-                return true;
-    }
+          // 📕例题：求[2,6,1,77,52,25,7]的最小值
+        //   function getMin(arr8){
+        //     let min = arr8.sort(function(a,b){
+        //         return (a - b)
+        //     })
+        //     return min[arr8.length-1]
+        //   }
+        //   console.log(getMin([2,6,1,77,52,25,7]));
+        
+            function getMax(arr9){
+                let max = 0;
+                arr9.forEach((item)=>{
+                    item > max ? max = item : ""
+                })
+                return max
+            }
+            console.log(getMax([2,6,1,88,52,25,7]));
+            console.log("--------");
 
-    let str1=['g', 'r', 'a', 'm' ];
-    let str2=['r', 'g', 'a', 'm' ];
+        // 📕例题： 把下列数组前面都加上“小仙女的"
+            function addWord(arr10){
+                let newArr = arr10.map((item)=>"小仙女的"+item)
+                return newArr
+            }
+            console.log(addWord(["phone", "watch", "tv"]));
+            console.log("--------");
 
-    // Function Call
+        // 📕例题：在下列数组前面增加pencil, 后面增加pad, card
+        function addItem(arr11){
+            arr11.unshift("pencil")
+            arr11.push("pad", "card")
+            return arr11
+        }
+        console.log(addItem(["phone", "watch", "tv"]));
+        console.log("--------");
+        
+        // 📕例题：选出大于8的元素，放入新数组[2,3,7,12,56,44,102]
+        let newArr = [];
+        function bigEight(arr12){
+            arr12.forEach((item)=>{
+                item >8 ? newArr.push(item) : ""
+            })
+            return newArr
+        }
+        console.log(bigEight([2,3,7,12,56,44,102]));
 
-        if (areAnagram(str1, str2))
-            document.write("The two strings are" + " anagram of each other<br>");
-        else
-        {document.write("The two strings are not" + " anagram of each other<br>")};
+        console.log("--------");
+
+        // 📕题目6：计算[2, 6, 18, 15, 40] 中能被3整除的偶数的和
+        let newArr2 = []
+        function getOdds(arr13){
+            arr13.forEach((item)=>{
+                item %3 === 0 && item%2 === 0? newArr2.push(item) : ""
+            })
+            let sum = 0;
+            newArr2.forEach((item)=>{
+                sum = sum + item
+            })
+            return sum
+        }
+        console.log(getOdds([2, 6, 18, 15, 40]));
+        console.log("--------");
+
+
+        // 📕题目8：给一个数字数组，该数组中有很多数字0，将不为0的数据存入到一个新的数组中
+        let newArr3 = []
+        function filter0(arr14){
+            arr14.forEach((item)=>{
+                item !== 0 ? newArr3.push(item) : 0
+            })
+            return newArr3
+        }
+        console.log(filter0([0,0,0,0,0,0,0,20,2,0,9,0]));
+        console.log("--------");
+
+        // 📕题目2：计算1~100之间所有数的和
+        let sum3 = 0;
+        function getTotal(){
+            for(let i=0;i<100;i++){
+                sum3 = sum3 + i
+            }
+            return sum3
+        }
+        console.log(getTotal());
+        console.log("--------");
+
+        // 📝例题3：求任意两数的和
+        function getTtl(start=0,end=0){
+            let ttl = start+end
+            return ttl
+        }
+        console.log(getTtl(100,50));
+        console.log("--------");
+
+        // 📝例题1：求任意数组的最小值
+        function randomMin(arr15){
+            let min = arr15[0];
+            let max = arr15[0];
+            arr15.forEach((item)=>{
+                item < min ? min = item : "" || item > max ? max = item : ""
+            })
+            return [min, max] //求多个值用[]
+        }
+        console.log(randomMin([5,2,3,7,1]));
+
+
 
     </script>
 </body>

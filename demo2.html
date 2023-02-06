@@ -7,24 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <input id="input1" type="text" value="">
-    <input id="input1" type="text" value="">
-    <button>提交</button>
     <script>
-        const input1 = document.querySelector('#input1')
-        const input2 = document.querySelector('#input2')
-        const button = document.querySelector('button')
-        const value = document.querySelectorAll('input[value]')
-
-        button.addEventListener('click',function(){
-        if(input1.value.length < 8){
-            alert("请输入8位字符以上的密码")
+        function playlist(songs){
+            let count = 0;
+            let alist = [];
+            songs.forEach((item, index) => {
+                songs.forEach((initem, inindex)=>{
+                    // console.log(item)
+                    // console.log(initem);
+                    if(item!==initem){
+                        if(initem + item === 60 || initem + item === 120 || initem + item === 180){
+                            alist.push([initem,item])
+                            count++
+                            // console.log(initem + item);
+                            // console.log(item);
+                            // console.log("aaa");
+                            // console.log(initem);
+                            console.log(alist);
+                        }
+                    }
+                })
+                
+            });
+            return count / 2
         }
-        if(input1.value !== input2.value){
-            alert("两次密码不相同，请重新输入")
-        }
-    })
-        
+        console.log(playlist([40, 20, 60, 120]));
     </script>
 </body>
 </html>

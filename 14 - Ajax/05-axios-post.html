@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <button>新增图书</button>
+    <!-- 目标：点击按钮，向服务器新增一本书 -->
+</head>
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        document.querySelector('button').addEventListener('click', function(){
+            axios({
+            url:"http://www.liulongbin.top:3009/api/addbook",
+            method:"post",
+            // params是查询参数 ==> 适合用get参数
+            // data是要提交给服务器的数据
+            data:{
+                bookname:"嘻嘻哈哈历险记",
+                author:"哈哈",
+                publisher:"黑马出版社"
+            }
+        }).then(()=>{
+            // console.log(res);
+        })
+
+        })
+    </script>
+</body>
+</html>

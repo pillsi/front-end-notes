@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 必须要引入本地js或者CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // 基本请求写法
+        axios({
+            url:"http://www.liulongbin.top:3009/api/getbooks",
+            method:"get"
+        }).then(function({data:{code, msg, data}}){ //形参,请求传回来的数据
+        // }).then(function({data: res}){ 或者把data对象解构，重命名为res
+            // 对data传回来的数据进行深层解构
+            console.log(code); //log请求传回来的数据
+            console.log(data); 
+            console.log(msg);
+            // console.log(res);
+        })
+
+        // 如果只需要查询其中某一类的数据
+        // axios({
+        //     url:"http://www.liulongbin.top:3009/api/getbooks",
+        //     method:"get",
+        //     // params指定查询条件
+        //     params:{
+        //         id:2, //查询条件会变成url加到原url后面：http://www.liulongbin.top:3009/api/getbooks?id=2&bookname=%w%q(编码)
+        //         bookname:"红楼梦" //多类条件，只要id为2的这本书
+        //     }
+        // }).then((result)=>{
+        //         console.log(result);
+        //     })
+    </script>
+    
+</body>
+</html>

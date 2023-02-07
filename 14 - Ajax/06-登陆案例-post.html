@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username">
+    <input type="password" id="password">
+    <button>submit</button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <script>
+            let name = document.querySelector("#username").value
+            let password = document.querySelector("#password").value
+            console.log(name,password);
+
+            document.querySelector("button").addEventListener('click', function(){
+            axios({
+            url:"http://www.liulongbin.top:3009/api/login",
+            method:"POST",
+            data:{
+                username,
+                password
+            }
+        }).then(({data:res})=>{
+            // 
+        })
+
+            })
+            console.log(name);
+
+    </script>
+</body>
+</html>

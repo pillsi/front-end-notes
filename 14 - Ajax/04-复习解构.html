@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 复习解构：
+       const pigs = {
+        family:4,
+        girl:{
+            name:"Celine",
+            age:5
+        },
+        boy:{
+            name:"Eason",
+            age:2
+        }
+       }
+
+    //    let {girl:{name,age}} = pigs
+    //    console.log(name,age);
+    //    let {boy:{name:boyName, age:boyAge}} = pigs //给第二个对象重命名，不然同名会报错
+    //    console.log(boyName,boyAge);
+
+    //  用于函数参数
+    function fn({girl:{name:girlName, age:girlAge}, boy:{name:boyName, age:boyAge}} = pigs){
+        // let {girl:{name:girlName, age:girlAge}, boy:{name:boyName, age:boyAge}} = pigs //⭐️这里的解构，可以直接替换形参family
+        console.log(girlName,girlAge, boyName, boyAge);
+    }
+    fn(pigs)
+    </script>
+</body>
+</html>

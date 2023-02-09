@@ -22,8 +22,9 @@
                 author:"哈哈",
                 publisher:"黑马出版社"
             }
-        }).then(()=>{
-            // console.log(res);
+            // 添加成功后，就可以进get的后台看到这条数据
+        }).then(({data:res})=>{
+            console.log(res);
         })
 
         })

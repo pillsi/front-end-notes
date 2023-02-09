@@ -17,12 +17,12 @@
             // 注意渲染的代码一定要写在then函数里
             if(res.code === 200){
                 // 获取成功，渲染数据
-                res.data.forEach(item => {
+                res.data.map(item => 
                     // 更改动态数据
                     <img scr="http://www.liulongbin.top:3009/images/5.webp"></img> 
                     // 更改为：scr="http://www.liulongbin.top:3009${item.img}"
                     // title,time,cmt都更改活数据
-                });
+                );
             }else{
                 alert("页面加载失败")
             }

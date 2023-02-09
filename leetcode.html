@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    数组合并
+
+    <script>
+      function removeDuplicate(str) {
+        return Array.from(new Set(str.split(""))).join("");
+      }
+
+      console.log(removeDuplicate("abgfddccd"));
+
+      console.log("----");
+
+      // 1.📕求股票买卖，如何盈利最大
+      var maxProfit = function (prices) {
+        let profit = 0;
+        for (let i = 1; i < prices.length; i++) {
+          if (prices[i] > prices[i - 1]) {
+            profit = profit + prices[i] - prices[i - 1];
+          }
+        }
+        return profit;
+      };
+      console.log(maxProfit([2, 1, 3, 5, 7]));
+
+      console.log("----");
+
+      // 2.📕数组去重，计算长度，然后把重复的元素改为_，并输出
+      function fn(nums) {
+        let i = 0;
+        for (let j = 1; j < nums.length; j++) {
+          if (nums[j] !== nums[i]) {
+            i++;
+            nums[i] = nums[j];
+          }
+        }
+        return i + 1;
+      }
+      console.log(fn([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+      console.log("----");
+
+      // 3.🧠📕数组反转，k是几，就从右往左数的几位元素挪到最前面
+      var rotate = function (nums, k) {
+        let arr = [];
+        for (let i = nums.length - k; i < nums.length; i++) {
+          arr.push(nums[i]);
+          // console.log(arr);
+        }
+        for (let i = 0; i < nums.length - k; i++) {
+          arr.push(nums[i]);
+          console.log(arr);
+        }
+        for (let i = 0; i < nums.length; i++) {
+          nums[i] = arr[i];
+        }
+        return nums;
+      };
+      console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3)); //[5,6,7,1,2,3,4]
+
+      console.log("----");
+
+      // 4.📕如果数组里面有重复的元素，返回真，没有则返回假
+      var containsDuplicate = function (nums) {
+        for (let i = 0; i < nums.length; i++) {
+          for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] === nums[j]) {
+              return true;
+            }
+          }
+        }
+        return false;
+      };
+      console.log(containsDuplicate([1, 2, 3, 1]));
+      console.log("----");
+
+      // 5.🧠📕如果数组里没有重复的元素，则返回它的值
+      var singleNumber = function (nums) {
+        let result = 0;
+        for (let i = 0; i < nums.length; i++) {
+          let found = false;
+          for (let j = 0; j < nums.length; j++) {
+            if (i !== j && nums[i] === nums[j]) {
+              found = true;
+              break;
+            }
+          }
+          if (!found) {
+            result = nums[i];
+            break;
+          }
+        }
+        return result;
+      };
+      console.log(singleNumber([2, 2, 1]));
+      console.log("----");
+
+      // 6.🧠📕 有任意两组数组，导出他们的相交的集合元素
+      var intersect = function(nums1, nums2) {
+        let arr = []
+        for(let i=0;i<nums1.length;i++){
+            for(let j=0; j<nums2.length; j++){
+                if(nums2[j]===nums1[i]){
+                    arr.push(nums1[i])
+                    nums2.splice(j,1)
+                    break; //❓为什么必须加break?
+                }
+            }
+        }
+        return arr
+      };
+        console.log(intersect([1,1,2,3], [1,3,3]));//[1,3]
+        console.log("----");
+
+        //7. 🧠📕 在一串数组里面，末尾+1，逢10进1.比如[1,2,3]输出结果为[1,2,4]。[9]为[1,0]
+        var plusOne = function(digits) {
+            let n = digits.length;
+            for(let i=n-1; i >=0; i--){
+                if(digits[i]===9){
+                    digits[i]=0
+                } else {
+                    digits[i]++
+                    return digits //❓为什么这里得digits要返回，但是上面为0后不返回？
+                }
+            }
+            digits.unshift(1) //❓为什么在数组前面+1,会变成20，而不是1,1,9？
+            return digits
+        };
+        console.log(plusOne([1,9]));
+        console.log("----");
+
+        // 8. 📕选出数组里为0的数字，并且把它们排到数组的末尾
+        var moveZeroes = function(nums) {
+            let arr=[]
+            let arr1=[]
+            for(let i=0; i<nums.length; i++){
+                if(nums[i]===0){
+                    arr.push(nums[i])
+                    // console.log(arr);
+                }
+                if(nums[i]!==0){
+                    arr1.push(nums[i])
+                }
+                // console.log(arr,arr1);
+            }
+            let newArr = arr1.concat(arr)
+            return newArr            
+        };
+        console.log(moveZeroes([1,0,2,5,3,0,6]));
+
+    </script>
+  </body>
+</html>

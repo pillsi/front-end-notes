@@ -27,13 +27,13 @@
         console.log(fnc());
 
         //❌ 作用域失效的例子：
-        // function getSum(arr=[]){
-        //     let sum = 0;
-        //     for(let i = 0; i<=arr[i]; i++){
-        //     }
-        //     console.log(i); //i is not defined, 因为它不在局部内生效
-        // }
-        // getSum([1,2,3,4,5])
+        function getSum(arr=[]){
+            let sum = 0;
+            for(let i = 0; i<=arr[i]; i++){
+            }
+            console.log(i); //i is not defined, 因为它不在局部内生效
+        }
+        getSum([1,2,3,4,5])
 
         // ⭐️作用域链：函数套函数的情况时，在相同的函数名称下，返回给的是最近的
         

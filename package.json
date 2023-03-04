@@ -1,0 +1,23 @@
+{
+  "name": "front-end-notes",
+  "version": "1.0.0",
+  "description": "黑马前端课程VIP学习笔记，主要为自用，感兴趣的可自取",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pillsi/front-end-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pillsi/front-end-notes/issues"
+  },
+  "homepage": "https://github.com/pillsi/front-end-notes#readme",
+  "devDependencies": {
+    "jest": "^29.4.3"
+  }
+}

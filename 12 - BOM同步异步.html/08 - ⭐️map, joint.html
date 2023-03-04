@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    map概念: map的概念很像升级的for循环, 从头数到尾遍历, 不过它更多是处理数据用的
-    join概念: 像糖葫芦一样，把数组里的元素都穿成字符串
+  </head>
+  <body>
+    map概念: map的概念很像升级的for循环, 从头数到尾遍历,
+    不过它更多是处理数据用的 join概念: 像糖葫芦一样，把数组里的元素都穿成字符串
+    map后面如果跟{}，就要写return
     <script>
-        let arr = ['red', 'blue', 'pink']
-        arr.map(function(item, i){ //匿名函数
-            console.log(item); //red, blue, pink
-        })
+      let arr = ["red", "blue", "pink"];
+      arr.map(function (item, i) {
+        //匿名函数
+        console.log(item); //red, blue, pink
+      });
 
-        let newArr = arr.map(function(item, i){
-            return item+"小姐"
-        })
-        console.log(newArr); //生成了新的加工后的数组
+      let newArr = arr.map(function (item, i) {
+        return item + "小姐";
+      });
+      console.log(newArr); //生成了新的加工后的数组
 
-        // join，map返回的是数组，我们需要用join的方法将数组转字符串然后渲染
-        // 记得默认加空或其他任意
-        console.log(arr.join(' ')); // "red, blue, pink"
-
+      // join，map返回的是数组，我们需要用join的方法将数组转字符串然后渲染
+      // 记得默认加空或其他任意
+      console.log(arr.join(" ")); // "red, blue, pink"
     </script>
-</body>
+  </body>
 </html>

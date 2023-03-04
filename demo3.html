@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-
-function findSingle(arr) {
-  let newArr = [...new Set(arr)]
-  let result = []
-//   console.log(newArr);
-    for(let i=0; i<newArr.length; i++){
-        let count = 0;
-        for(let j=0; j<arr.length; j++){
-            if(arr[j]===newArr[i]){
-                count++
-                console.log(count);
+        var strStr = function(haystack, needle) {
+            if(needle === ""){
+                return 0
+            };
+            for(let i=0; i<haystack.length; i++){
+                if(haystack[i]===needle[0]){
+                    let found = true;
+                    for(let j=1; j<needle.length; j++){
+                        if(haystack[i+j]!==needle[j]){
+                            found = false;
+                            break;
+                        }
+                    }
+                    if (found){
+                        return i
+                    }
+                    
+                }
             }
-        }
-        if(count === 1){
-            result.push(newArr[i])
-        }
-    }
-    return result
-}
-
-console.log(findSingle([1, 2, 1, 2, 3]));
-
-
+            return -1
+        };
+        console.log(strStr("sadbutsad","but"));
     </script>
-</body>
+  </body>
 </html>
